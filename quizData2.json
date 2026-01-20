@@ -728,5 +728,187 @@
             "correctAnswer": "C",
             "explanation": "Book is not furniture; all others (chair, table, sofa) are furniture items"
         }
+    ],
+    "situationalReasoningQuestions": [
+        {
+            "questionId": "Q1",
+            "scenario": "You receive contradictory instructions from two different managers. What should you do?",
+            "options": {
+                "A": "Follow the instruction from the higher-ranking manager",
+                "B": "Choose the easier task",
+                "C": "Bring both managers together to clarify priorities and expectations",
+                "D": "Ignore both and do what you think is best"
+            },
+            "correctAnswer": "C",
+            "explanation": "Facilitating communication between managers ensures clarity and prevents future conflicts"
+        },
+        {
+            "questionId": "Q2",
+            "scenario": "You notice a security vulnerability in your company's system. What's your immediate action?",
+            "options": {
+                "A": "Post about it on social media",
+                "B": "Report it immediately to IT security following proper channels",
+                "C": "Try to fix it yourself without telling anyone",
+                "D": "Ignore it as it's not your job"
+            },
+            "correctAnswer": "B",
+            "explanation": "Proper security protocols protect the organization and ensure vulnerabilities are addressed professionally"
+        },
+        {
+            "questionId": "Q3",
+            "scenario": "A team member takes credit for your idea in a meeting. How do you respond?",
+            "options": {
+                "A": "Confront them aggressively in the meeting",
+                "B": "Calmly clarify the idea's origin professionally, or discuss privately afterward",
+                "C": "Let it go and say nothing",
+                "D": "Seek revenge later"
+            },
+            "correctAnswer": "B",
+            "explanation": "Professional assertion of your contributions maintains your reputation while preserving working relationships"
+        },
+        {
+            "questionId": "Q4",
+            "scenario": "You're asked to complete a task you've never done before with minimal guidance. What's your approach?",
+            "options": {
+                "A": "Refuse because you don't know how",
+                "B": "Pretend you know and hope for the best",
+                "C": "Research, ask clarifying questions, seek resources, and provide regular updates",
+                "D": "Do it incorrectly and blame lack of training"
+            },
+            "correctAnswer": "C",
+            "explanation": "Proactive learning and communication demonstrate initiative while managing expectations"
+        },
+        {
+            "questionId": "Q5",
+            "scenario": "Your company is implementing changes you believe will harm employee morale. What do you do?",
+            "options": {
+                "A": "Start a petition against management",
+                "B": "Present well-reasoned concerns through appropriate channels with suggested alternatives",
+                "C": "Complain to everyone but management",
+                "D": "Begin looking for a new job immediately"
+            },
+            "correctAnswer": "B",
+            "explanation": "Constructive feedback through proper channels is more likely to influence decisions positively"
+        },
+        {
+            "questionId": "Q6",
+            "scenario": "You're in a meeting and realize you don't understand a key concept being discussed. What should you do?",
+            "options": {
+                "A": "Pretend to understand to avoid looking incompetent",
+                "B": "Ask for clarification professionally",
+                "C": "Stay silent and google it later",
+                "D": "Change the subject"
+            },
+            "correctAnswer": "B",
+            "explanation": "Asking questions shows engagement and ensures you can contribute effectively; others likely have the same question"
+        },
+        {
+            "questionId": "Q7",
+            "scenario": "A colleague consistently interrupts you during meetings. How do you address this?",
+            "options": {
+                "A": "Interrupt them back to show how it feels",
+                "B": "Speak privately with them about the behavior, or politely assert yourself in meetings",
+                "C": "Stop contributing to meetings",
+                "D": "Complain to HR immediately"
+            },
+            "correctAnswer": "B",
+            "explanation": "Direct, respectful communication often resolves behavioral issues while maintaining professional relationships"
+        },
+        {
+            "questionId": "Q8",
+            "scenario": "You're offered a promotion that requires relocating, but you have personal commitments. What's the best response?",
+            "options": {
+                "A": "Accept immediately without considering implications",
+                "B": "Decline immediately without discussion",
+                "C": "Discuss your situation openly, explore options like remote work or timeline flexibility",
+                "D": "Accept and then back out later"
+            },
+            "correctAnswer": "C",
+            "explanation": "Transparent communication may reveal flexible solutions that work for both parties"
+        },
+        {
+            "questionId": "Q9",
+            "scenario": "You discover a colleague is padding their expense reports. What should you do?",
+            "options": {
+                "A": "Mind your own business",
+                "B": "Confront them publicly",
+                "C": "Report to appropriate authority following company policy",
+                "D": "Start doing it yourself"
+            },
+            "correctAnswer": "C",
+            "explanation": "Reporting unethical behavior through proper channels protects organizational integrity"
+        },
+        {
+            "questionId": "Q10",
+            "scenario": "Your project is successful, but you know it succeeded partly due to luck rather than your strategy. How do you report this?",
+            "options": {
+                "A": "Take full credit for brilliant planning",
+                "B": "Acknowledge both the strategy and fortunate circumstances honestly",
+                "C": "Downplay the success entirely",
+                "D": "Attribute it only to luck"
+            },
+            "correctAnswer": "B",
+            "explanation": "Honest assessment builds credibility and helps the organization learn realistic lessons"
+        },
+        {
+            "questionId": "Q11",
+            "scenario": "You're assigned to work with someone known for being difficult. How do you approach this?",
+            "options": {
+                "A": "Request a different partner immediately",
+                "B": "Start with a professional attitude, establish clear communication, and give them a fair chance",
+                "C": "Prepare for conflict from day one",
+                "D": "Do all the work yourself to avoid interaction"
+            },
+            "correctAnswer": "B",
+            "explanation": "Professional approach and clear communication often prevent problems and may change reputations"
+        },
+        {
+            "questionId": "Q12",
+            "scenario": "You're asked to give feedback on your manager's performance. How do you handle this?",
+            "options": {
+                "A": "Only give positive feedback to stay safe",
+                "B": "Use it as an opportunity to complain",
+                "C": "Provide balanced, constructive feedback with specific examples",
+                "D": "Decline to participate"
+            },
+            "correctAnswer": "C",
+            "explanation": "Honest, constructive feedback helps management improve and demonstrates your professional maturity"
+        },
+        {
+            "questionId": "Q13",
+            "scenario": "You realize midway through a project that your initial approach won't work. What do you do?",
+            "options": {
+                "A": "Continue anyway and hope it works out",
+                "B": "Immediately inform stakeholders, propose alternative approaches, and adjust the plan",
+                "C": "Abandon the project",
+                "D": "Blame the requirements for being unclear"
+            },
+            "correctAnswer": "B",
+            "explanation": "Early course correction minimizes wasted resources and demonstrates adaptive problem-solving"
+        },
+        {
+            "questionId": "Q14",
+            "scenario": "A client makes an unreasonable request outside your scope of work. How do you respond?",
+            "options": {
+                "A": "Do it to keep them happy",
+                "B": "Ignore the request",
+                "C": "Politely explain scope boundaries, offer alternatives within scope, or discuss scope changes",
+                "D": "Tell them they're being unreasonable"
+            },
+            "correctAnswer": "C",
+            "explanation": "Professional boundary-setting with helpful alternatives maintains good relationships while protecting resources"
+        },
+        {
+            "questionId": "Q15",
+            "scenario": "You receive recognition for a project, but a junior colleague did significant uncredited work. What do you do?",
+            "options": {
+                "A": "Accept the recognition silently",
+                "B": "Ensure the colleague receives appropriate recognition and credit",
+                "C": "Mention them briefly but emphasize your role",
+                "D": "Give them all the credit"
+            },
+            "correctAnswer": "B",
+            "explanation": "Ensuring proper credit builds team trust, develops junior talent, and demonstrates leadership qualities"
+        }
     ]
 }

@@ -727,5 +727,187 @@
       "correctAnswer": "C",
       "explanation": "Carrot is a vegetable; all others (apple, banana, grape) are fruits"
     }
+  ],
+  "situationalReasoningQuestions": [
+    {
+      "questionId": "Q1",
+      "scenario": "You notice a colleague consistently missing project deadlines, affecting team performance. What's the best approach?",
+      "options": {
+        "A": "Report them to management immediately",
+        "B": "Privately discuss with them to understand if there are challenges and offer support",
+        "C": "Ignore it as it's not your responsibility",
+        "D": "Complain to other team members"
+      },
+      "correctAnswer": "B",
+      "explanation": "The collaborative approach addresses the issue constructively while maintaining professional relationships"
+    },
+    {
+      "questionId": "Q2",
+      "scenario": "You're given two urgent tasks with the same deadline. How do you prioritize?",
+      "options": {
+        "A": "Start with whichever seems easier",
+        "B": "Work on both simultaneously",
+        "C": "Assess impact and urgency, communicate with stakeholders, then prioritize accordingly",
+        "D": "Choose randomly"
+      },
+      "correctAnswer": "C",
+      "explanation": "Strategic prioritization based on impact and stakeholder communication ensures the most critical work is completed"
+    },
+    {
+      "questionId": "Q3",
+      "scenario": "During a meeting, you realize your manager has made a factual error in their presentation. What do you do?",
+      "options": {
+        "A": "Point it out immediately in front of everyone",
+        "B": "Discreetly mention it to them after the meeting",
+        "C": "Say nothing to avoid embarrassment",
+        "D": "Email everyone later to correct it"
+      },
+      "correctAnswer": "B",
+      "explanation": "Addressing the error privately respects your manager while ensuring accurate information is shared"
+    },
+    {
+      "questionId": "Q4",
+      "scenario": "A client requests a feature that would compromise the project's quality and timeline. How do you respond?",
+      "options": {
+        "A": "Agree immediately to keep the client happy",
+        "B": "Refuse outright without explanation",
+        "C": "Explain the implications, suggest alternatives, and collaborate on a solution",
+        "D": "Ignore the request"
+      },
+      "correctAnswer": "C",
+      "explanation": "Professional communication that educates the client and offers solutions maintains quality while preserving the relationship"
+    },
+    {
+      "questionId": "Q5",
+      "scenario": "You discover a minor error in work you submitted last week. What's your next step?",
+      "options": {
+        "A": "Hope no one notices",
+        "B": "Immediately inform relevant parties and provide a correction",
+        "C": "Wait until someone complains",
+        "D": "Blame it on technical issues"
+      },
+      "correctAnswer": "B",
+      "explanation": "Proactive error correction demonstrates accountability and prevents larger issues"
+    },
+    {
+      "questionId": "Q6",
+      "scenario": "Your team is divided on an approach. You disagree with the majority but they seem set on their decision. What do you do?",
+      "options": {
+        "A": "Silently go along with it",
+        "B": "State your concerns clearly, but support the team decision once made",
+        "C": "Refuse to participate",
+        "D": "Undermine the decision later"
+      },
+      "correctAnswer": "B",
+      "explanation": "Voicing concerns while supporting team decisions shows both integrity and teamwork"
+    },
+    {
+      "questionId": "Q7",
+      "scenario": "You receive credit for work that was actually a team effort. How do you handle this?",
+      "options": {
+        "A": "Accept the credit silently",
+        "B": "Publicly acknowledge the team's contributions",
+        "C": "Deflect all credit to others",
+        "D": "Say it was mostly your work anyway"
+      },
+      "correctAnswer": "B",
+      "explanation": "Acknowledging team contributions builds trust and maintains professional integrity"
+    },
+    {
+      "questionId": "Q8",
+      "scenario": "A new process is implemented that you believe is inefficient. What's the best course of action?",
+      "options": {
+        "A": "Continue using the old process quietly",
+        "B": "Complain about it to colleagues",
+        "C": "Give it a fair trial, document concerns with data, then propose improvements",
+        "D": "Refuse to adopt it"
+      },
+      "correctAnswer": "C",
+      "explanation": "Data-driven feedback after a fair trial is more likely to lead to positive change"
+    },
+    {
+      "questionId": "Q9",
+      "scenario": "You're asked to take on additional responsibilities without extra compensation. How do you respond?",
+      "options": {
+        "A": "Refuse immediately",
+        "B": "Accept without question",
+        "C": "Discuss the scope, your capacity, and negotiate terms or support",
+        "D": "Agree but do minimal work"
+      },
+      "correctAnswer": "C",
+      "explanation": "Professional negotiation ensures clarity on expectations and maintains work-life balance"
+    },
+    {
+      "questionId": "Q10",
+      "scenario": "You witness a colleague treating a junior team member disrespectfully. What should you do?",
+      "options": {
+        "A": "Stay out of it",
+        "B": "Address it directly with the colleague or escalate if necessary",
+        "C": "Tell everyone else about it",
+        "D": "Only intervene if asked"
+      },
+      "correctAnswer": "B",
+      "explanation": "Addressing unprofessional behavior protects team culture and supports colleagues"
+    },
+    {
+      "questionId": "Q11",
+      "scenario": "You're falling behind on a deadline due to unforeseen complications. When should you communicate this?",
+      "options": {
+        "A": "Wait until the deadline passes",
+        "B": "As soon as you realize there's a risk, with proposed solutions",
+        "C": "Only if someone asks",
+        "D": "Never mention it"
+      },
+      "correctAnswer": "B",
+      "explanation": "Early communication allows for adjustments and demonstrates proactive problem-solving"
+    },
+    {
+      "questionId": "Q12",
+      "scenario": "A customer is upset about a service issue that wasn't your fault. How do you handle it?",
+      "options": {
+        "A": "Explain it's not your department",
+        "B": "Argue about who's at fault",
+        "C": "Listen empathetically, apologize for the experience, and help find a solution",
+        "D": "Transfer them repeatedly"
+      },
+      "correctAnswer": "C",
+      "explanation": "Empathetic service recovery focuses on solving the problem rather than assigning blame"
+    },
+    {
+      "questionId": "Q13",
+      "scenario": "You have access to confidential information that could help a friend. They ask you about it. What do you do?",
+      "options": {
+        "A": "Share it since they're a friend",
+        "B": "Politely decline, explaining confidentiality obligations",
+        "C": "Give hints without direct information",
+        "D": "Share it but ask them to keep it secret"
+      },
+      "correctAnswer": "B",
+      "explanation": "Maintaining confidentiality is essential for professional trust, regardless of personal relationships"
+    },
+    {
+      "questionId": "Q14",
+      "scenario": "Your workload is overwhelming and affecting your performance. What's the best approach?",
+      "options": {
+        "A": "Push through and say nothing",
+        "B": "Quit immediately",
+        "C": "Schedule a meeting with your manager to discuss priorities and resources",
+        "D": "Start delivering poor quality work"
+      },
+      "correctAnswer": "C",
+      "explanation": "Proactive communication about capacity allows for workload adjustment and prevents burnout"
+    },
+    {
+      "questionId": "Q15",
+      "scenario": "You're asked to train a new hire who will eventually replace you as you move to a new role. How do you approach this?",
+      "options": {
+        "A": "Provide minimal training to remain indispensable",
+        "B": "Train them thoroughly to ensure smooth transition",
+        "C": "Sabotage their learning",
+        "D": "Refuse to train them"
+      },
+      "correctAnswer": "B",
+      "explanation": "Professional knowledge transfer supports organizational success and enhances your reputation"
+    }
   ]
 }

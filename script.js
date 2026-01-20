@@ -12,9 +12,9 @@ let timerDuration = 300;
 // Load quiz data from JSON files
 async function loadQuizData() {
     try {
-        const response1 = await fetch('quizData.json');
+        const response1 = await fetch('quizData1.json');
         quizData = await response1.json();
-        
+
         const response2 = await fetch('quizData2.json');
         quiz2Data = await response2.json();
     } catch (error) {
@@ -130,7 +130,7 @@ function initializeEventListeners() {
             });
             btn.classList.add('active');
             btn.classList.remove('btn-secondary');
-            
+
             // Update current quiz set
             currentQuizSet = btn.dataset.quiz;
         });
@@ -176,6 +176,8 @@ function startQuiz(section) {
         currentQuestions = shuffle([...data.verbalReasoningQuestions]);
     } else if (section === 'abstract') {
         currentQuestions = shuffle([...data.patternSequenceQuestions]);
+    } else if (section === 'situational') {
+        currentQuestions = shuffle([...data.situationalReasoningQuestions]);
     }
 
     userAnswers = new Array(currentQuestions.length).fill(null);
@@ -224,7 +226,7 @@ function displayQuestion() {
     let html = `
         <div class="question-card">
             <div class="question-number">Question ${currentQuestionIndex + 1} of ${currentQuestions.length}</div>
-            <div class="question-text">${question.questionText || question.pattern || question.passage}</div>
+            <div class="question-text">${question.questionText || question.scenario || question.pattern || question.passage}</div>
             <div class="${isPersonality ? 'scale-options options' : 'options'}">
     `;
 
@@ -359,6 +361,11 @@ function generateStandardResults() {
             high: 'Exceptional lateral thinking; can see the "big picture" and spot trends quickly.',
             medium: 'Good at following established rules but may take longer to identify new, complex patterns.',
             low: 'Prefers clear, explicit instructions over figuring out systems from scratch.'
+        },
+        situational: {
+            high: 'Excellent judgment and decision-making; strong professional maturity and interpersonal skills.',
+            medium: 'Good situational awareness but may occasionally struggle with complex workplace dynamics.',
+            low: 'May benefit from mentorship in professional communication and conflict resolution.'
         }
     };
 
@@ -370,7 +377,7 @@ function generateStandardResults() {
 
     let html = `
         <div class="result-section">
-            <h3>📊 ${currentSection === 'numerical' ? 'Numerical' : currentSection === 'verbal' ? 'Verbal' : 'Abstract'} Reasoning Results</h3>
+            <h3>📊 ${currentSection === 'numerical' ? 'Numerical' : currentSection === 'verbal' ? 'Verbal' : currentSection === 'situational' ? 'Situational' : 'Abstract'} Reasoning Results</h3>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
                 <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 8px; text-align: center; border: 2px solid ${performanceColor};">
@@ -433,7 +440,7 @@ function generateStandardResults() {
                         <strong>Q${index + 1}:</strong>
                         <span style="font-size: 1.5rem;">${isCorrect ? '✓' : '✗'}</span>
                     </div>
-                    <div style="margin-bottom: 0.5rem;">${question.questionText || question.pattern || question.passage}</div>
+                    <div style="margin-bottom: 0.5rem;">${question.questionText || question.scenario || question.pattern || question.passage}</div>
                     <div style="font-size: 0.9rem;">
                         <strong>Your answer:</strong> ${userAnswer || 'Not answered'} ${userAnswer && question.options ? '→ ' + question.options[userAnswer] : ''}
                         ${!isCorrect ? `<br><strong style="color: var(--success-color);">Correct answer:</strong> ${correctAnswer} → ${question.options[correctAnswer]}` : ''}
@@ -467,7 +474,7 @@ function generatePersonalityResults() {
             const trait = question.trait;
             const isReversed = question.reverseScored === true;
             const score = isReversed ? (6 - answer) : answer;
-            
+
             scores[trait].total += score;
             scores[trait].count += 1;
             scores[trait].questions.push(index + 1);
