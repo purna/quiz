@@ -439,4 +439,13 @@ footer a:hover {
     .timer {
         font-size: 1.2rem;
     }
+
+    .difficulty-btn-container {
+        flex-direction: column;
+    }
+
+    .difficulty-btn-container .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
 }
