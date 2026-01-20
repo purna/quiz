@@ -1,0 +1,732 @@
+{
+    "mathQuestions": [
+        {
+            "questionId": "Q1",
+            "questionText": "What is 15% of 80?",
+            "options": {
+                "A": "10",
+                "B": "12",
+                "C": "15",
+                "D": "18"
+            },
+            "correctAnswer": "B",
+            "explanation": "15% = 0.15, so 0.15 × 80 = 12"
+        },
+        {
+            "questionId": "Q2",
+            "questionText": "If 4 apples cost £2.40, how much do 7 apples cost?",
+            "options": {
+                "A": "£3.60",
+                "B": "£4.00",
+                "C": "£4.20",
+                "D": "£4.80"
+            },
+            "correctAnswer": "C",
+            "explanation": "Each apple costs £2.40 ÷ 4 = £0.60. So 7 apples cost 7 × £0.60 = £4.20"
+        },
+        {
+            "questionId": "Q3",
+            "questionText": "What is the next number: 5, 10, 20, 40, ?",
+            "options": {
+                "A": "60",
+                "B": "70",
+                "C": "80",
+                "D": "90"
+            },
+            "correctAnswer": "C",
+            "explanation": "Each number doubles: 5×2=10, 10×2=20, 20×2=40, 40×2=80"
+        },
+        {
+            "questionId": "Q4",
+            "questionText": "A value decreases from 120 to 90. What is the percentage decrease?",
+            "options": {
+                "A": "20%",
+                "B": "25%",
+                "C": "30%",
+                "D": "35%"
+            },
+            "correctAnswer": "B",
+            "explanation": "Decrease = 120-90 = 30. Percentage = (30/120)×100 = 25%"
+        },
+        {
+            "questionId": "Q5",
+            "questionText": "360 ÷ 12 = ?",
+            "options": {
+                "A": "28",
+                "B": "30",
+                "C": "32",
+                "D": "36"
+            },
+            "correctAnswer": "B",
+            "explanation": "360 ÷ 12 = 30 (or 12 × 30 = 360)"
+        },
+        {
+            "questionId": "Q6",
+            "questionText": "Solve for x: 2x + 5 = 17",
+            "options": {
+                "A": "4",
+                "B": "5",
+                "C": "6",
+                "D": "7"
+            },
+            "correctAnswer": "C",
+            "explanation": "2x + 5 = 17, so 2x = 12, therefore x = 6"
+        },
+        {
+            "questionId": "Q7",
+            "questionText": "A meeting starts at 09:45 and ends at 12:20. How long was it?",
+            "options": {
+                "A": "2h 25m",
+                "B": "2h 35m",
+                "C": "2h 45m",
+                "D": "3h 00m"
+            },
+            "correctAnswer": "B",
+            "explanation": "From 09:45 to 12:20 is 2 hours and 35 minutes (09:45 → 12:20)"
+        },
+        {
+            "questionId": "Q8",
+            "questionText": "What is the perimeter of a square with side 9cm?",
+            "options": {
+                "A": "18cm",
+                "B": "27cm",
+                "C": "36cm",
+                "D": "81cm"
+            },
+            "correctAnswer": "C",
+            "explanation": "Perimeter of square = 4 × side = 4 × 9 = 36cm"
+        },
+        {
+            "questionId": "Q9",
+            "questionText": "In a group of 40 people, 3/8 are children. How many children?",
+            "options": {
+                "A": "12",
+                "B": "15",
+                "C": "18",
+                "D": "20"
+            },
+            "correctAnswer": "B",
+            "explanation": "3/8 of 40 = (3×40)÷8 = 120÷8 = 15"
+        },
+        {
+            "questionId": "Q10",
+            "questionText": "What is 2/5 of 100?",
+            "options": {
+                "A": "20",
+                "B": "30",
+                "C": "40",
+                "D": "50"
+            },
+            "correctAnswer": "C",
+            "explanation": "2/5 of 100 = (2×100)÷5 = 200÷5 = 40"
+        },
+        {
+            "questionId": "Q11",
+            "questionText": "Find the median: 10, 15, 20, 25, 30",
+            "options": {
+                "A": "15",
+                "B": "20",
+                "C": "22",
+                "D": "25"
+            },
+            "correctAnswer": "B",
+            "explanation": "Median is the middle value in an ordered list: 10, 15, 20, 25, 30"
+        },
+        {
+            "questionId": "Q12",
+            "questionText": "What is the square root of 196?",
+            "options": {
+                "A": "12",
+                "B": "13",
+                "C": "14",
+                "D": "15"
+            },
+            "correctAnswer": "C",
+            "explanation": "√196 = 14 (because 14 × 14 = 196)"
+        },
+        {
+            "questionId": "Q13",
+            "questionText": "0.3 * 0.4 = ?",
+            "options": {
+                "A": "0.07",
+                "B": "0.12",
+                "C": "0.7",
+                "D": "1.2"
+            },
+            "correctAnswer": "B",
+            "explanation": "0.3 × 0.4 = 0.12 (or 3/10 × 4/10 = 12/100)"
+        },
+        {
+            "questionId": "Q14",
+            "questionText": "If a train travels at 80 mph, how far in 30 minutes?",
+            "options": {
+                "A": "30 miles",
+                "B": "35 miles",
+                "C": "40 miles",
+                "D": "45 miles"
+            },
+            "correctAnswer": "C",
+            "explanation": "30 minutes = 0.5 hours. Distance = 80 × 0.5 = 40 miles"
+        },
+        {
+            "questionId": "Q15",
+            "questionText": "Next: 2, 5, 10, 17, 26, ?",
+            "options": {
+                "A": "35",
+                "B": "37",
+                "C": "39",
+                "D": "41"
+            },
+            "correctAnswer": "B",
+            "explanation": "Add increasing odd numbers: +3, +5, +7, +9, +11 → 26+11=37"
+        }
+    ],
+    "patternSequenceQuestions": [
+        {
+            "questionId": "Q1",
+            "pattern": "X Y X Y X Y ?",
+            "options": {
+                "A": "X",
+                "B": "Y",
+                "C": "Z",
+                "D": "W"
+            },
+            "correctAnswer": "B",
+            "explanation": "Alternating pattern: X, Y, X, Y, X, Y... Next is Y"
+        },
+        {
+            "questionId": "Q2",
+            "pattern": "■ ○ ■ ○ ■ ○ ?",
+            "options": {
+                "A": "■",
+                "B": "○",
+                "C": "●",
+                "D": "□"
+            },
+            "correctAnswer": "B",
+            "explanation": "Alternating shapes: square, circle, square, circle... Next is circle (○)"
+        },
+        {
+            "questionId": "Q3",
+            "pattern": "2A, 4B, 6C, 8D, ?",
+            "options": {
+                "A": "9E",
+                "B": "10D",
+                "C": "10E",
+                "D": "12F"
+            },
+            "correctAnswer": "C",
+            "explanation": "Number increases by 2 and letter advances by 1: 2A→4B→6C→8D→10E"
+        },
+        {
+            "questionId": "Q4",
+            "pattern": "Red → Blue → Green → Red → ?",
+            "options": {
+                "A": "Blue",
+                "B": "Green",
+                "C": "Red",
+                "D": "Yellow"
+            },
+            "correctAnswer": "A",
+            "explanation": "Repeating 3-color cycle: Red, Blue, Green. Next is Blue"
+        },
+        {
+            "questionId": "Q5",
+            "pattern": "OOXXOOXXOO ?",
+            "options": {
+                "A": "OO",
+                "B": "XX",
+                "C": "OX",
+                "D": "XO"
+            },
+            "correctAnswer": "B",
+            "explanation": "Pairs alternate: OO, XX, OO, XX, OO... Next is XX"
+        },
+        {
+            "questionId": "Q6",
+            "pattern": "5, 10, 15, 20, ?",
+            "options": {
+                "A": "22",
+                "B": "24",
+                "C": "25",
+                "D": "30"
+            },
+            "correctAnswer": "C",
+            "explanation": "Adding 5 each time: 5, 10, 15, 20, 25 (multiples of 5)"
+        },
+        {
+            "questionId": "Q7",
+            "pattern": "🌙 ⭐ 🌙 ⭐ 🌙 ?",
+            "options": {
+                "A": "🌙",
+                "B": "⭐",
+                "C": "☀️",
+                "D": "🌟"
+            },
+            "correctAnswer": "B",
+            "explanation": "Alternating: moon, star, moon, star... Next is star"
+        },
+        {
+            "questionId": "Q8",
+            "pattern": "A, C, E, G, I, ?",
+            "options": {
+                "A": "J",
+                "B": "K",
+                "C": "L",
+                "D": "M"
+            },
+            "correctAnswer": "B",
+            "explanation": "Skip one letter each time: A, C, E, G, I, K (odd position letters)"
+        },
+        {
+            "questionId": "Q9",
+            "pattern": "3, 6, 12, 24, 48, ?",
+            "options": {
+                "A": "72",
+                "B": "84",
+                "C": "96",
+                "D": "100"
+            },
+            "correctAnswer": "C",
+            "explanation": "Each number doubles: 3×2=6, 6×2=12, 12×2=24, 24×2=48, 48×2=96"
+        },
+        {
+            "questionId": "Q10",
+            "pattern": "➡️ ⬇️ ⬅️ ⬆️ ➡️ ?",
+            "options": {
+                "A": "➡️",
+                "B": "⬇️",
+                "C": "⬅️",
+                "D": "⬆️"
+            },
+            "correctAnswer": "B",
+            "explanation": "Clockwise rotation: right, down, left, up, right, down"
+        },
+        {
+            "questionId": "Q11",
+            "pattern": "MTWTFSS ?",
+            "options": {
+                "A": "M",
+                "B": "T",
+                "C": "W",
+                "D": "S"
+            },
+            "correctAnswer": "A",
+            "explanation": "First letters of days: Mon, Tue, Wed, Thu, Fri, Sat, Sun, Mon"
+        },
+        {
+            "questionId": "Q12",
+            "pattern": "2, 4, 7, 11, 16, ?",
+            "options": {
+                "A": "20",
+                "B": "21",
+                "C": "22",
+                "D": "23"
+            },
+            "correctAnswer": "C",
+            "explanation": "Add increasing numbers: +2, +3, +4, +5, +6 → 16+6=22"
+        },
+        {
+            "questionId": "Q13",
+            "pattern": "◐ ◑ ◐ ◑ ?",
+            "options": {
+                "A": "◐",
+                "B": "◑",
+                "C": "◒",
+                "D": "◓"
+            },
+            "correctAnswer": "A",
+            "explanation": "Alternating moon phases: ◐, ◑, ◐, ◑, ◐"
+        },
+        {
+            "questionId": "Q14",
+            "pattern": "B2, D4, F6, H8, ?",
+            "options": {
+                "A": "I9",
+                "B": "J10",
+                "C": "K11",
+                "D": "L12"
+            },
+            "correctAnswer": "B",
+            "explanation": "Skip one letter and add 2 to number: B2→D4→F6→H8→J10"
+        },
+        {
+            "questionId": "Q15",
+            "pattern": "7, 14, 21, 28, 35, ?",
+            "options": {
+                "A": "40",
+                "B": "41",
+                "C": "42",
+                "D": "45"
+            },
+            "correctAnswer": "C",
+            "explanation": "Multiples of 7: 7, 14, 21, 28, 35, 42"
+        }
+    ],
+    "personalityAssessment": [
+        {
+            "questionId": "Q1",
+            "questionText": "I enjoy working in a team environment",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "extraversion"
+        },
+        {
+            "questionId": "Q2",
+            "questionText": "I prefer planning over spontaneity",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "conscientiousness"
+        },
+        {
+            "questionId": "Q3",
+            "questionText": "I stay calm under pressure",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "emotionalStability"
+        },
+        {
+            "questionId": "Q4",
+            "questionText": "I like trying new and unfamiliar tasks",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "openness"
+        },
+        {
+            "questionId": "Q5",
+            "questionText": "I pay close attention to details",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "conscientiousness"
+        },
+        {
+            "questionId": "Q6",
+            "questionText": "I find it easy to start conversations with strangers",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "extraversion"
+        },
+        {
+            "questionId": "Q7",
+            "questionText": "I often finish my tasks well before the deadline",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "conscientiousness"
+        },
+        {
+            "questionId": "Q8",
+            "questionText": "I am willing to change my opinion if I am proven wrong",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "openness"
+        },
+        {
+            "questionId": "Q9",
+            "questionText": "I prefer to have a fixed daily routine",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "conscientiousness",
+            "reverseScored": false
+        },
+        {
+            "questionId": "Q10",
+            "questionText": "I feel energized after spending time with a large group",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "extraversion"
+        },
+        {
+            "questionId": "Q11",
+            "questionText": "I tend to worry about things that might go wrong",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "emotionalStability",
+            "reverseScored": true
+        },
+        {
+            "questionId": "Q12",
+            "questionText": "I enjoy solving complex, abstract problems",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "openness"
+        },
+        {
+            "questionId": "Q13",
+            "questionText": "I prioritize the needs of the team over my own interests",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "agreeableness"
+        },
+        {
+            "questionId": "Q14",
+            "questionText": "I keep my workspace highly organized",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "conscientiousness"
+        },
+        {
+            "questionId": "Q15",
+            "questionText": "I am comfortable making decisions with limited information",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "openness"
+        }
+    ],
+    "verbalReasoningQuestions": [
+        {
+            "questionId": "Q1",
+            "passage": "All dogs are animals. All animals need water. Do dogs need water?",
+            "options": {
+                "A": "Yes",
+                "B": "No",
+                "C": "Cannot say",
+                "D": "Sometimes"
+            },
+            "correctAnswer": "A",
+            "explanation": "Logical deduction: If dogs are animals and animals need water, then dogs must need water"
+        },
+        {
+            "questionId": "Q2",
+            "passage": "Choose the word most similar to \"Quick\"",
+            "options": {
+                "A": "Slow",
+                "B": "Fast",
+                "C": "Heavy",
+                "D": "Light"
+            },
+            "correctAnswer": "B",
+            "explanation": "Quick means fast; they are synonyms"
+        },
+        {
+            "questionId": "Q3",
+            "passage": "Choose the word most opposite to \"Expand\"",
+            "options": {
+                "A": "Grow",
+                "B": "Enlarge",
+                "C": "Shrink",
+                "D": "Stretch"
+            },
+            "correctAnswer": "C",
+            "explanation": "Shrink is the antonym of expand; all other options mean to make larger"
+        },
+        {
+            "questionId": "Q4",
+            "passage": "Statement: All teachers are educated. Conclusion: All educated people are teachers.",
+            "options": {
+                "A": "TRUE",
+                "B": "FALSE",
+                "C": "Cannot say",
+                "D": "Partly true"
+            },
+            "correctAnswer": "B",
+            "explanation": "False - just because all teachers are educated doesn't mean all educated people are teachers"
+        },
+        {
+            "questionId": "Q5",
+            "passage": "Choose the correct spelling",
+            "options": {
+                "A": "Recieve",
+                "B": "Receive",
+                "C": "Receve",
+                "D": "Receeve"
+            },
+            "correctAnswer": "B",
+            "explanation": "Receive follows the 'i before e except after c' rule"
+        },
+        {
+            "questionId": "Q6",
+            "passage": "If some books are novels and all novels are fiction, are all books fiction?",
+            "options": {
+                "A": "Yes",
+                "B": "No",
+                "C": "Cannot say",
+                "D": "Always"
+            },
+            "correctAnswer": "C",
+            "explanation": "We know some books are novels (which are fiction), but we don't know about all books"
+        },
+        {
+            "questionId": "Q7",
+            "passage": "Choose the word most similar to \"Difficult\"",
+            "options": {
+                "A": "Easy",
+                "B": "Hard",
+                "C": "Simple",
+                "D": "Quick"
+            },
+            "correctAnswer": "B",
+            "explanation": "Difficult and hard are synonyms, both meaning not easy"
+        },
+        {
+            "questionId": "Q8",
+            "passage": "Choose the word most opposite to \"Beautiful\"",
+            "options": {
+                "A": "Pretty",
+                "B": "Lovely",
+                "C": "Ugly",
+                "D": "Nice"
+            },
+            "correctAnswer": "C",
+            "explanation": "Ugly is the antonym of beautiful; all other options are similar to beautiful"
+        },
+        {
+            "questionId": "Q9",
+            "passage": "Which word completes the analogy? Page : Book :: Key : ?",
+            "options": {
+                "A": "Lock",
+                "B": "Keyboard",
+                "C": "Door",
+                "D": "Window"
+            },
+            "correctAnswer": "B",
+            "explanation": "A page is part of a book, just as a key is part of a keyboard"
+        },
+        {
+            "questionId": "Q10",
+            "passage": "Select the correctly punctuated sentence.",
+            "options": {
+                "A": "Theyre coming.",
+                "B": "They're coming.",
+                "C": "Their coming.",
+                "D": "There coming."
+            },
+            "correctAnswer": "B",
+            "explanation": "They're is the contraction of 'they are'. Their shows possession, there indicates location"
+        },
+        {
+            "questionId": "Q11",
+            "passage": "Mary is faster than Tom. Tom is faster than Lisa. Is Mary faster than Lisa?",
+            "options": {
+                "A": "Yes",
+                "B": "No",
+                "C": "Cannot say",
+                "D": "They are equal"
+            },
+            "correctAnswer": "A",
+            "explanation": "Transitive property: If Mary > Tom and Tom > Lisa, then Mary > Lisa"
+        },
+        {
+            "questionId": "Q12",
+            "passage": "Choose the word most similar to \"Happy\"",
+            "options": {
+                "A": "Sad",
+                "B": "Joyful",
+                "C": "Angry",
+                "D": "Tired"
+            },
+            "correctAnswer": "B",
+            "explanation": "Happy and joyful are synonyms, both expressing positive emotions"
+        },
+        {
+            "questionId": "Q13",
+            "passage": "Choose the word most opposite to \"Generous\"",
+            "options": {
+                "A": "Kind",
+                "B": "Selfish",
+                "C": "Giving",
+                "D": "Caring"
+            },
+            "correctAnswer": "B",
+            "explanation": "Selfish is the antonym of generous; all other options are similar to generous"
+        },
+        {
+            "questionId": "Q14",
+            "passage": "Choose the correct spelling",
+            "options": {
+                "A": "Separate",
+                "B": "Seperate",
+                "C": "Separete",
+                "D": "Seperete"
+            },
+            "correctAnswer": "A",
+            "explanation": "Separate has 'a' in the middle. Remember: there's 'a rat' in separate"
+        },
+        {
+            "questionId": "Q15",
+            "passage": "Which word does not belong in the group?",
+            "options": {
+                "A": "Chair",
+                "B": "Table",
+                "C": "Book",
+                "D": "Sofa"
+            },
+            "correctAnswer": "C",
+            "explanation": "Book is not furniture; all others (chair, table, sofa) are furniture items"
+        }
+    ]
+}
