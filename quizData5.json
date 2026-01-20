@@ -1,0 +1,912 @@
+{
+    "mathQuestions": [
+        {
+            "questionId": "Q1",
+            "questionText": "A company sells 250 units at £24 each. If costs are £3,000, what is the profit?",
+            "options": {
+                "A": "£3,000",
+                "B": "£3,500",
+                "C": "£3,000",
+                "D": "£3,500"
+            },
+            "correctAnswer": "B",
+            "explanation": "Revenue = 250×24=£6,000; Profit = £6,000−£3,000=£3,000"
+        },
+        {
+            "questionId": "Q2",
+            "questionText": "If 60% of a workforce of 120 are engineers, how many are engineers?",
+            "options": {
+                "A": "60",
+                "B": "70",
+                "C": "72",
+                "D": "75"
+            },
+            "correctAnswer": "C",
+            "explanation": "120×0.6=72 engineers"
+        },
+        {
+            "questionId": "Q3",
+            "questionText": "A 20% discount is applied to a £250 item. What is the sale price?",
+            "options": {
+                "A": "£200",
+                "B": "£210",
+                "C": "£220",
+                "D": "£205"
+            },
+            "correctAnswer": "A",
+            "explanation": "£250×0.2=£50; £250−£50=£200"
+        },
+        {
+            "questionId": "Q4",
+            "questionText": "If 5 machines produce 600 units in 8 hours, how many units per machine per hour?",
+            "options": {
+                "A": "15",
+                "B": "12",
+                "C": "10",
+                "D": "8"
+            },
+            "correctAnswer": "B",
+            "explanation": "600÷5=120 units/machine; 120÷8=15 units/hour"
+        },
+        {
+            "questionId": "Q5",
+            "questionText": "A loan of £12,000 accrues 5% interest per year. What is the interest after 1 year?",
+            "options": {
+                "A": "£500",
+                "B": "£600",
+                "C": "£550",
+                "D": "£650"
+            },
+            "correctAnswer": "B",
+            "explanation": "12,000×0.05=£600"
+        },
+        {
+            "questionId": "Q6",
+            "questionText": "If a train travels 180 km in 3 hours, what is its average speed?",
+            "options": {
+                "A": "50 km/h",
+                "B": "55 km/h",
+                "C": "60 km/h",
+                "D": "65 km/h"
+            },
+            "correctAnswer": "C",
+            "explanation": "180 ÷ 3 = 60 km/h"
+        },
+        {
+            "questionId": "Q7",
+            "questionText": "Solve for x: 5x + 12 = 37",
+            "options": {
+                "A": "4",
+                "B": "5",
+                "C": "6",
+                "D": "7"
+            },
+            "correctAnswer": "B",
+            "explanation": "5x=25 → x=5"
+        },
+        {
+            "questionId": "Q8",
+            "questionText": "If a shipment contains 480 items and 12% are damaged, how many are intact?",
+            "options": {
+                "A": "422",
+                "B": "423",
+                "C": "424",
+                "D": "425"
+            },
+            "correctAnswer": "C",
+            "explanation": "12% of 480=57.6≈56–57; 480−57=423"
+        },
+        {
+            "questionId": "Q9",
+            "questionText": "A project takes 12 days with 4 workers. How many days for 6 workers?",
+            "options": {
+                "A": "8",
+                "B": "9",
+                "C": "7",
+                "D": "6"
+            },
+            "correctAnswer": "A",
+            "explanation": "Work=4×12=48 person-days; 48÷6=8 days"
+        },
+        {
+            "questionId": "Q10",
+            "questionText": "Convert 0.625 to a fraction",
+            "options": {
+                "A": "5/8",
+                "B": "3/5",
+                "C": "2/3",
+                "D": "7/8"
+            },
+            "correctAnswer": "A",
+            "explanation": "0.625=625/1000=5/8"
+        },
+        {
+            "questionId": "Q11",
+            "questionText": "A price increases from £180 to £225. What is the percentage increase?",
+            "options": {
+                "A": "20%",
+                "B": "25%",
+                "C": "30%",
+                "D": "22%"
+            },
+            "correctAnswer": "B",
+            "explanation": "Increase=45; 45÷180×100=25%"
+        },
+        {
+            "questionId": "Q12",
+            "questionText": "Simplify: 6(x+2) − 4x",
+            "options": {
+                "A": "2x + 12",
+                "B": "2x + 10",
+                "C": "10x + 12",
+                "D": "6x + 12"
+            },
+            "correctAnswer": "A",
+            "explanation": "6x+12−4x=2x+12"
+        },
+        {
+            "questionId": "Q13",
+            "questionText": "A tank holds 500 liters. 35% is used. How much remains?",
+            "options": {
+                "A": "325",
+                "B": "315",
+                "C": "330",
+                "D": "340"
+            },
+            "correctAnswer": "A",
+            "explanation": "500×0.35=175 used; 500−175=325"
+        },
+        {
+            "questionId": "Q14",
+            "questionText": "Divide 864 by 12",
+            "options": {
+                "A": "70",
+                "B": "72",
+                "C": "74",
+                "D": "76"
+            },
+            "correctAnswer": "B",
+            "explanation": "12×72=864"
+        },
+        {
+            "questionId": "Q15",
+            "questionText": "A shipment costs £2,400 for 80 items. What is the cost per item?",
+            "options": {
+                "A": "£28",
+                "B": "£30",
+                "C": "£32",
+                "D": "£34"
+            },
+            "correctAnswer": "B",
+            "explanation": "2,400÷80=£30/item"
+        }
+    ],
+    "patternSequenceQuestions": [
+        {
+            "questionId": "Q1",
+            "pattern": "1, 3, 6, 10, 15, ?",
+            "options": {
+                "A": "20",
+                "B": "21",
+                "C": "22",
+                "D": "23"
+            },
+            "correctAnswer": "B",
+            "explanation": "Triangular numbers: +2,+3,+4,+5 → 15+6=21"
+        },
+        {
+            "questionId": "Q2",
+            "pattern": "2, 4, 12, 48, ?",
+            "options": {
+                "A": "144",
+                "B": "192",
+                "C": "240",
+                "D": "200"
+            },
+            "correctAnswer": "B",
+            "explanation": "×2,×3,×4, next ×5 → 48×4=192"
+        },
+        {
+            "questionId": "Q3",
+            "pattern": "A, D, I, P, ?",
+            "options": {
+                "A": "Y",
+                "B": "Z",
+                "C": "X",
+                "D": "W"
+            },
+            "correctAnswer": "C",
+            "explanation": "Letter positions: +3,+5,+7,+9 → next X"
+        },
+        {
+            "questionId": "Q4",
+            "pattern": "5, 10, 20, 40, ?",
+            "options": {
+                "A": "60",
+                "B": "70",
+                "C": "80",
+                "D": "100"
+            },
+            "correctAnswer": "C",
+            "explanation": "Multiply by 2 each time"
+        },
+        {
+            "questionId": "Q5",
+            "pattern": "★, ☆, ☆, ★, ☆, ☆, ★, ?",
+            "options": {
+                "A": "★",
+                "B": "☆",
+                "C": "▲",
+                "D": "●"
+            },
+            "correctAnswer": "B",
+            "explanation": "Pattern repeats ★,☆,☆"
+        },
+        {
+            "questionId": "Q6",
+            "pattern": "3, 5, 11, 23, 47, ?",
+            "options": {
+                "A": "95",
+                "B": "97",
+                "C": "99",
+                "D": "101"
+            },
+            "correctAnswer": "B",
+            "explanation": "×2−1 → 3×2−1=5; 5×2+1=11... next 47×2+3=97"
+        },
+        {
+            "questionId": "Q7",
+            "pattern": "1, 1, 2, 6, 24, ?",
+            "options": {
+                "A": "120",
+                "B": "60",
+                "C": "24",
+                "D": "36"
+            },
+            "correctAnswer": "A",
+            "explanation": "Factorials 1!,2!,3!,4!,5! → 120"
+        },
+        {
+            "questionId": "Q8",
+            "pattern": "Z, X, U, Q, ?",
+            "options": {
+                "A": "M",
+                "B": "N",
+                "C": "O",
+                "D": "P"
+            },
+            "correctAnswer": "A",
+            "explanation": "Letter pattern: −2, −3, −4, next −5 = M"
+        },
+        {
+            "questionId": "Q9",
+            "pattern": "2, 6, 12, 20, ?",
+            "options": {
+                "A": "28",
+                "B": "30",
+                "C": "32",
+                "D": "36"
+            },
+            "correctAnswer": "A",
+            "explanation": "Add consecutive even numbers: +4,+6,+8,+10 → next 28"
+        },
+        {
+            "questionId": "Q10",
+            "pattern": "1, 2, 4, 8, 16, ?",
+            "options": {
+                "A": "24",
+                "B": "30",
+                "C": "32",
+                "D": "34"
+            },
+            "correctAnswer": "C",
+            "explanation": "Powers of 2"
+        },
+        {
+            "questionId": "Q11",
+            "pattern": "1, 2, 6, 24, 120, ?",
+            "options": {
+                "A": "720",
+                "B": "600",
+                "C": "360",
+                "D": "240"
+            },
+            "correctAnswer": "A",
+            "explanation": "Factorials 1!→6!"
+        },
+        {
+            "questionId": "Q12",
+            "pattern": "B, D, G, K, P, ?",
+            "options": {
+                "A": "V",
+                "B": "U",
+                "C": "T",
+                "D": "W"
+            },
+            "correctAnswer": "B",
+            "explanation": "Add 2,3,4,5,6 letters → next U"
+        },
+        {
+            "questionId": "Q13",
+            "pattern": "10, 9, 7, 4, 0, ?",
+            "options": {
+                "A": "−3",
+                "B": "−4",
+                "C": "−5",
+                "D": "−6"
+            },
+            "correctAnswer": "A",
+            "explanation": "Subtract decreasing numbers: −1,−2,−3,−4, next −5?"
+        },
+        {
+            "questionId": "Q14",
+            "pattern": "1, 3, 9, 27, 81, ?",
+            "options": {
+                "A": "162",
+                "B": "243",
+                "C": "324",
+                "D": "216"
+            },
+            "correctAnswer": "B",
+            "explanation": "Multiply by 3 each time"
+        },
+        {
+            "questionId": "Q15",
+            "pattern": "◼, ◻, ◻, ◼, ◻, ◻, ?",
+            "options": {
+                "A": "◼",
+                "B": "◻",
+                "C": "▲",
+                "D": "●"
+            },
+            "correctAnswer": "B",
+            "explanation": "Repeating pattern ◼,◻,◻"
+        }
+    ],
+    "personalityAssessment": [
+        {
+            "questionId": "Q1",
+            "questionText": "I manage time effectively to meet deadlines",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "time_management"
+        },
+        {
+            "questionId": "Q2",
+            "questionText": "I adapt well to sudden changes",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "adaptability"
+        },
+        {
+            "questionId": "Q3",
+            "questionText": "I take ownership of mistakes",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "accountability"
+        },
+        {
+            "questionId": "Q4",
+            "questionText": "I ask for feedback to improve performance",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "growth_mindset"
+        },
+        {
+            "questionId": "Q5",
+            "questionText": "I communicate clearly with diverse colleagues",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "communication"
+        },
+        {
+            "questionId": "Q6",
+            "questionText": "I remain calm under pressure",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "stress_tolerance"
+        },
+        {
+            "questionId": "Q7",
+            "questionText": "I am proactive in identifying potential problems",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "initiative"
+        },
+        {
+            "questionId": "Q8",
+            "questionText": "I collaborate effectively in teams",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "teamwork"
+        },
+        {
+            "questionId": "Q9",
+            "questionText": "I remain professional in difficult situations",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "professionalism"
+        },
+        {
+            "questionId": "Q10",
+            "questionText": "I work efficiently with minimal supervision",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "self_reliance"
+        },
+        {
+            "questionId": "Q11",
+            "questionText": "I seek opportunities to improve efficiency",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "initiative"
+        },
+        {
+            "questionId": "Q12",
+            "questionText": "I am open to learning new skills",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "growth_mindset"
+        },
+        {
+            "questionId": "Q13",
+            "questionText": "I remain calm when priorities shift",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "stress_tolerance"
+        },
+        {
+            "questionId": "Q14",
+            "questionText": "I take responsibility for my work",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "accountability"
+        },
+        {
+            "questionId": "Q15",
+            "questionText": "I provide and receive constructive feedback respectfully",
+            "scale": {
+                "stronglyDisagree": 1,
+                "disagree": 2,
+                "neutral": 3,
+                "agree": 4,
+                "stronglyAgree": 5
+            },
+            "trait": "communication"
+        }
+    ],
+    "verbalReasoningQuestions": [
+        {
+            "questionId": "Q1",
+            "passage": "Choose the word closest in meaning to 'analyze'",
+            "options": {
+                "A": "Evaluate",
+                "B": "Ignore",
+                "C": "Destroy",
+                "D": "Create"
+            },
+            "correctAnswer": "A",
+            "explanation": "Analyze means to examine carefully"
+        },
+        {
+            "questionId": "Q2",
+            "passage": "Choose the word opposite to 'generous'",
+            "options": {
+                "A": "Stingy",
+                "B": "Kind",
+                "C": "Friendly",
+                "D": "Charitable"
+            },
+            "correctAnswer": "A",
+            "explanation": "Stingy is the opposite of generous"
+        },
+        {
+            "questionId": "Q3",
+            "passage": "All managers are employees. Some employees are remote. Are all managers remote?",
+            "options": {
+                "A": "Yes",
+                "B": "No",
+                "C": "Cannot say",
+                "D": "Sometimes"
+            },
+            "correctAnswer": "C",
+            "explanation": "No direct link"
+        },
+        {
+            "questionId": "Q4",
+            "passage": "Which word does not belong?",
+            "options": {
+                "A": "Excel",
+                "B": "Word",
+                "C": "PowerPoint",
+                "D": "Pen"
+            },
+            "correctAnswer": "D",
+            "explanation": "Pen is not software"
+        },
+        {
+            "questionId": "Q5",
+            "passage": "Choose correct spelling",
+            "options": {
+                "A": "Seperate",
+                "B": "Separate",
+                "C": "Seperete",
+                "D": "Seperat"
+            },
+            "correctAnswer": "B",
+            "explanation": "Separate is correct"
+        },
+        {
+            "questionId": "Q6",
+            "passage": "Choose word closest in meaning to 'interpret'",
+            "options": {
+                "A": "Explain",
+                "B": "Ignore",
+                "C": "Simplify",
+                "D": "Repeat"
+            },
+            "correctAnswer": "A",
+            "explanation": "Interpret means explain or clarify"
+        },
+        {
+            "questionId": "Q7",
+            "passage": "Choose word opposite to 'scarce'",
+            "options": {
+                "A": "Rare",
+                "B": "Abundant",
+                "C": "Limited",
+                "D": "Uncommon"
+            },
+            "correctAnswer": "B",
+            "explanation": "Abundant is opposite of scarce"
+        },
+        {
+            "questionId": "Q8",
+            "passage": "All engineers are logical. Some logical people are artists. Are all engineers artists?",
+            "options": {
+                "A": "Yes",
+                "B": "No",
+                "C": "Cannot say",
+                "D": "Sometimes"
+            },
+            "correctAnswer": "C",
+            "explanation": "No direct link"
+        },
+        {
+            "questionId": "Q9",
+            "passage": "Which word does not belong?",
+            "options": {
+                "A": "Apple",
+                "B": "Banana",
+                "C": "Carrot",
+                "D": "Orange"
+            },
+            "correctAnswer": "C",
+            "explanation": "Carrot is a vegetable; others are fruits"
+        },
+        {
+            "questionId": "Q10",
+            "passage": "All cats are mammals. All mammals breathe. Do cats breathe?",
+            "options": {
+                "A": "Yes",
+                "B": "No",
+                "C": "Cannot say",
+                "D": "Sometimes"
+            },
+            "correctAnswer": "A",
+            "explanation": "Logical deduction"
+        },
+        {
+            "questionId": "Q11",
+            "passage": "Choose word closest in meaning to 'evaluate'",
+            "options": {
+                "A": "Assess",
+                "B": "Ignore",
+                "C": "Destroy",
+                "D": "Create"
+            },
+            "correctAnswer": "A",
+            "explanation": "Evaluate means assess"
+        },
+        {
+            "questionId": "Q12",
+            "passage": "Choose word opposite to 'optimistic'",
+            "options": {
+                "A": "Pessimistic",
+                "B": "Happy",
+                "C": "Neutral",
+                "D": "Cheerful"
+            },
+            "correctAnswer": "A",
+            "explanation": "Pessimistic is opposite of optimistic"
+        },
+        {
+            "questionId": "Q13",
+            "passage": "All students study. Some students play sports. Are all who play sports students?",
+            "options": {
+                "A": "Yes",
+                "B": "No",
+                "C": "Cannot say",
+                "D": "Sometimes"
+            },
+            "correctAnswer": "C",
+            "explanation": "Only some students play sports"
+        },
+        {
+            "questionId": "Q14",
+            "passage": "Which word does not belong?",
+            "options": {
+                "A": "Chair",
+                "B": "Table",
+                "C": "Lamp",
+                "D": "Apple"
+            },
+            "correctAnswer": "D",
+            "explanation": "Apple is not furniture"
+        },
+        {
+            "questionId": "Q15",
+            "passage": "Choose correct sentence",
+            "options": {
+                "A": "The data were analysed",
+                "B": "The data was analysed",
+                "C": "The data analyse",
+                "D": "The data has analyse"
+            },
+            "correctAnswer": "A",
+            "explanation": "Data is plural in formal usage"
+        }
+    ],
+    "situationalReasoningQuestions": [
+        {
+            "questionId": "Q1",
+            "scenario": "Deadline is unrealistic.",
+            "options": {
+                "A": "Ignore",
+                "B": "Refuse",
+                "C": "Raise concerns with alternatives",
+                "D": "Work excessive hours"
+            },
+            "correctAnswer": "C",
+            "explanation": "Proactive communication"
+        },
+        {
+            "questionId": "Q2",
+            "scenario": "Colleague delivers low-quality work affecting output.",
+            "options": {
+                "A": "Ignore",
+                "B": "Complain",
+                "C": "Address constructively/escalate",
+                "D": "Redo work silently"
+            },
+            "correctAnswer": "C",
+            "explanation": "Professional resolution"
+        },
+        {
+            "questionId": "Q3",
+            "scenario": "Potential risk overlooked in project.",
+            "options": {
+                "A": "Assume others notice",
+                "B": "Wait",
+                "C": "Highlight with evidence",
+                "D": "Document privately"
+            },
+            "correctAnswer": "C",
+            "explanation": "Early risk identification"
+        },
+        {
+            "questionId": "Q4",
+            "scenario": "Task outside job description.",
+            "options": {
+                "A": "Refuse",
+                "B": "Attempt blindly",
+                "C": "Assess feasibility & communicate",
+                "D": "Ignore"
+            },
+            "correctAnswer": "C",
+            "explanation": "Professional assessment"
+        },
+        {
+            "questionId": "Q5",
+            "scenario": "Process inefficiency affects multiple departments.",
+            "options": {
+                "A": "Ignore",
+                "B": "Report with solutions",
+                "C": "Complain",
+                "D": "Change without approval"
+            },
+            "correctAnswer": "B",
+            "explanation": "Provide evidence-based suggestions"
+        },
+        {
+            "questionId": "Q6",
+            "scenario": "Disagree with manager's decision.",
+            "options": {
+                "A": "Argue aggressively",
+                "B": "Silent",
+                "C": "Provide reasoned alternative",
+                "D": "Leave"
+            },
+            "correctAnswer": "C",
+            "explanation": "Respectful communication"
+        },
+        {
+            "questionId": "Q7",
+            "scenario": "Team with conflicting priorities.",
+            "options": {
+                "A": "Focus on own tasks",
+                "B": "Coordinate and communicate",
+                "C": "Blame others",
+                "D": "Ignore"
+            },
+            "correctAnswer": "B",
+            "explanation": "Team coordination"
+        },
+        {
+            "questionId": "Q8",
+            "scenario": "Receive critical feedback.",
+            "options": {
+                "A": "Take personally",
+                "B": "Listen and implement",
+                "C": "Ignore",
+                "D": "Complain"
+            },
+            "correctAnswer": "B",
+            "explanation": "Constructive feedback"
+        },
+        {
+            "questionId": "Q9",
+            "scenario": "Two colleagues request conflicting resources.",
+            "options": {
+                "A": "Prioritise one",
+                "B": "Seek clarification",
+                "C": "Do nothing",
+                "D": "Do both blindly"
+            },
+            "correctAnswer": "B",
+            "explanation": "Clarify to ensure fairness"
+        },
+        {
+            "questionId": "Q10",
+            "scenario": "New software tool unfamiliar.",
+            "options": {
+                "A": "Avoid",
+                "B": "Learn proactively",
+                "C": "Ask someone else",
+                "D": "Ignore training"
+            },
+            "correctAnswer": "B",
+            "explanation": "Proactive learning"
+        },
+        {
+            "questionId": "Q11",
+            "scenario": "Colleague struggling with workload.",
+            "options": {
+                "A": "Ignore",
+                "B": "Offer help",
+                "C": "Complain",
+                "D": "Take over"
+            },
+            "correctAnswer": "B",
+            "explanation": "Support improves team performance"
+        },
+        {
+            "questionId": "Q12",
+            "scenario": "Mistake in client report.",
+            "options": {
+                "A": "Ignore",
+                "B": "Report & correct",
+                "C": "Blame colleague",
+                "D": "Wait"
+            },
+            "correctAnswer": "B",
+            "explanation": "Immediate correction shows responsibility"
+        },
+        {
+            "questionId": "Q13",
+            "scenario": "Presentation with limited prep.",
+            "options": {
+                "A": "Decline",
+                "B": "Focus on key points",
+                "C": "Read slides",
+                "D": "Cancel"
+            },
+            "correctAnswer": "B",
+            "explanation": "Adaptability is key"
+        },
+        {
+            "questionId": "Q14",
+            "scenario": "Team conflict due to miscommunication.",
+            "options": {
+                "A": "Avoid",
+                "B": "Address & clarify roles",
+                "C": "Blame",
+                "D": "Do nothing"
+            },
+            "correctAnswer": "B",
+            "explanation": "Constructive resolution"
+        },
+        {
+            "questionId": "Q15",
+            "scenario": "Contradictory instructions from two managers.",
+            "options": {
+                "A": "Follow one",
+                "B": "Seek clarification",
+                "C": "Ignore",
+                "D": "Do both blindly"
+            },
+            "correctAnswer": "B",
+            "explanation": "Clarifying ensures alignment"
+        }
+    ]
+}

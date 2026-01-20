@@ -1,0 +1,683 @@
+{
+  "mathQuestions": [
+    {
+      "questionId": "Q1",
+      "questionText": "What is 20% of 150?",
+      "options": {
+        "A": "20",
+        "B": "25",
+        "C": "30",
+        "D": "35"
+      },
+      "correctAnswer": "C",
+      "explanation": "20% = 0.2, so 0.2 × 150 = 30"
+    },
+    {
+      "questionId": "Q2",
+      "questionText": "If 5 notebooks cost £7.50, how much do 8 notebooks cost?",
+      "options": {
+        "A": "£10.00",
+        "B": "£11.50",
+        "C": "£12.00",
+        "D": "£13.00"
+      },
+      "correctAnswer": "C",
+      "explanation": "Each notebook costs £1.50. 8 × £1.50 = £12.00"
+    },
+    {
+      "questionId": "Q3",
+      "questionText": "What is the next number: 4, 8, 16, 32, ?",
+      "options": {
+        "A": "48",
+        "B": "56",
+        "C": "64",
+        "D": "72"
+      },
+      "correctAnswer": "C",
+      "explanation": "The number doubles each time"
+    },
+    {
+      "questionId": "Q4",
+      "questionText": "A value increases from 50 to 65. What is the percentage increase?",
+      "options": {
+        "A": "25%",
+        "B": "30%",
+        "C": "35%",
+        "D": "40%"
+      },
+      "correctAnswer": "B",
+      "explanation": "Increase = 15. (15 ÷ 50) × 100 = 30%"
+    },
+    {
+      "questionId": "Q5",
+      "questionText": "480 ÷ 16 = ?",
+      "options": {
+        "A": "25",
+        "B": "30",
+        "C": "32",
+        "D": "36"
+      },
+      "correctAnswer": "B",
+      "explanation": "16 × 30 = 480"
+    },
+    {
+      "questionId": "Q6",
+      "questionText": "Solve for x: 4x − 8 = 20",
+      "options": {
+        "A": "5",
+        "B": "6",
+        "C": "7",
+        "D": "8"
+      },
+      "correctAnswer": "B",
+      "explanation": "4x = 28, so x = 7"
+    },
+    {
+      "questionId": "Q7",
+      "questionText": "A lesson starts at 10:15 and ends at 12:50. How long is it?",
+      "options": {
+        "A": "2h 20m",
+        "B": "2h 25m",
+        "C": "2h 35m",
+        "D": "2h 45m"
+      },
+      "correctAnswer": "C",
+      "explanation": "From 10:15 to 12:50 is 2 hours and 35 minutes"
+    },
+    {
+      "questionId": "Q8",
+      "questionText": "What is the perimeter of a rectangle with sides 6cm and 10cm?",
+      "options": {
+        "A": "26cm",
+        "B": "30cm",
+        "C": "32cm",
+        "D": "36cm"
+      },
+      "correctAnswer": "C",
+      "explanation": "Perimeter = 2 × (6 + 10) = 32cm"
+    },
+    {
+      "questionId": "Q9",
+      "questionText": "In a class of 32 students, 1/4 are absent. How many are absent?",
+      "options": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "10"
+      },
+      "correctAnswer": "C",
+      "explanation": "1/4 of 32 = 8"
+    },
+    {
+      "questionId": "Q10",
+      "questionText": "What is 3/10 of 200?",
+      "options": {
+        "A": "40",
+        "B": "50",
+        "C": "60",
+        "D": "80"
+      },
+      "correctAnswer": "C",
+      "explanation": "(3 × 200) ÷ 10 = 60"
+    },
+    {
+      "questionId": "Q11",
+      "questionText": "Find the median: 6, 9, 12, 15, 18",
+      "options": {
+        "A": "9",
+        "B": "12",
+        "C": "15",
+        "D": "18"
+      },
+      "correctAnswer": "B",
+      "explanation": "The middle value is 12"
+    },
+    {
+      "questionId": "Q12",
+      "questionText": "What is the square root of 225?",
+      "options": {
+        "A": "12",
+        "B": "13",
+        "C": "14",
+        "D": "15"
+      },
+      "correctAnswer": "D",
+      "explanation": "15 × 15 = 225"
+    },
+    {
+      "questionId": "Q13",
+      "questionText": "0.5 × 0.6 = ?",
+      "options": {
+        "A": "0.11",
+        "B": "0.30",
+        "C": "0.56",
+        "D": "3.0"
+      },
+      "correctAnswer": "B",
+      "explanation": "5/10 × 6/10 = 30/100 = 0.30"
+    },
+    {
+      "questionId": "Q14",
+      "questionText": "If a car travels at 60 mph, how far in 45 minutes?",
+      "options": {
+        "A": "40 miles",
+        "B": "45 miles",
+        "C": "50 miles",
+        "D": "55 miles"
+      },
+      "correctAnswer": "B",
+      "explanation": "45 minutes = 0.75 hours. 60 × 0.75 = 45 miles"
+    },
+    {
+      "questionId": "Q15",
+      "questionText": "Next: 1, 4, 9, 16, 25, ?",
+      "options": {
+        "A": "30",
+        "B": "32",
+        "C": "36",
+        "D": "49"
+      },
+      "correctAnswer": "C",
+      "explanation": "Square numbers: 1², 2², 3², 4², 5², 6²"
+    }
+  ],
+
+  "patternSequenceQuestions": [
+    {
+      "questionId": "Q1",
+      "pattern": "A B A B A B ?",
+      "options": { "A": "A", "B": "B", "C": "C", "D": "D" },
+      "correctAnswer": "B",
+      "explanation": "Alternating pattern"
+    },
+    {
+      "questionId": "Q2",
+      "pattern": "● ▲ ● ▲ ● ▲ ?",
+      "options": { "A": "●", "B": "▲", "C": "■", "D": "◆" },
+      "correctAnswer": "B",
+      "explanation": "Alternating shapes"
+    },
+    {
+      "questionId": "Q3",
+      "pattern": "1A, 3B, 5C, 7D, ?",
+      "options": { "A": "8E", "B": "9D", "C": "9E", "D": "10F" },
+      "correctAnswer": "C",
+      "explanation": "Odd numbers increase by 2, letters advance"
+    },
+    {
+      "questionId": "Q4",
+      "pattern": "Yellow → Green → Blue → Yellow → ?",
+      "options": { "A": "Green", "B": "Blue", "C": "Yellow", "D": "Red" },
+      "correctAnswer": "A",
+      "explanation": "Repeating color cycle"
+    },
+    {
+      "questionId": "Q5",
+      "pattern": "XXOOXXOOXX ?",
+      "options": { "A": "OO", "B": "XX", "C": "XO", "D": "OX" },
+      "correctAnswer": "A",
+      "explanation": "Repeating pairs"
+    },
+    {
+      "questionId": "Q6",
+      "pattern": "10, 20, 30, 40, ?",
+      "options": { "A": "45", "B": "50", "C": "55", "D": "60" },
+      "correctAnswer": "B",
+      "explanation": "Add 10 each time"
+    },
+    {
+      "questionId": "Q7",
+      "pattern": "☀️ 🌧️ ☀️ 🌧️ ☀️ ?",
+      "options": { "A": "☀️", "B": "🌧️", "C": "❄️", "D": "🌪️" },
+      "correctAnswer": "B",
+      "explanation": "Alternating weather symbols"
+    },
+    {
+      "questionId": "Q8",
+      "pattern": "B, D, F, H, J, ?",
+      "options": { "A": "K", "B": "L", "C": "M", "D": "N" },
+      "correctAnswer": "B",
+      "explanation": "Skipping one letter each time"
+    },
+    {
+      "questionId": "Q9",
+      "pattern": "5, 10, 20, 40, 80, ?",
+      "options": { "A": "120", "B": "140", "C": "160", "D": "200" },
+      "correctAnswer": "C",
+      "explanation": "Each number doubles"
+    },
+    {
+      "questionId": "Q10",
+      "pattern": "⬆️ ➡️ ⬇️ ⬅️ ⬆️ ?",
+      "options": { "A": "➡️", "B": "⬇️", "C": "⬅️", "D": "⬆️" },
+      "correctAnswer": "A",
+      "explanation": "Clockwise rotation"
+    },
+    {
+      "questionId": "Q11",
+      "pattern": "JFMAMJJ ?",
+      "options": { "A": "A", "B": "S", "C": "O", "D": "D" },
+      "correctAnswer": "A",
+      "explanation": "First letters of months"
+    },
+    {
+      "questionId": "Q12",
+      "pattern": "1, 3, 6, 10, 15, ?",
+      "options": { "A": "18", "B": "20", "C": "21", "D": "22" },
+      "correctAnswer": "C",
+      "explanation": "Add increasing numbers"
+    },
+    {
+      "questionId": "Q13",
+      "pattern": "▲ ▼ ▲ ▼ ?",
+      "options": { "A": "▲", "B": "▼", "C": "■", "D": "◆" },
+      "correctAnswer": "A",
+      "explanation": "Alternating pattern"
+    },
+    {
+      "questionId": "Q14",
+      "pattern": "C3, E5, G7, I9, ?",
+      "options": { "A": "J10", "B": "K11", "C": "L12", "D": "M13" },
+      "correctAnswer": "B",
+      "explanation": "Skip one letter and add 2"
+    },
+    {
+      "questionId": "Q15",
+      "pattern": "9, 18, 27, 36, 45, ?",
+      "options": { "A": "50", "B": "52", "C": "54", "D": "56" },
+      "correctAnswer": "C",
+      "explanation": "Multiples of 9"
+    }
+  ],
+
+  "personalityAssessment": [
+    {
+      "questionId": "Q1",
+      "questionText": "I feel comfortable taking the lead on projects",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "extraversion"
+    },
+    {
+      "questionId": "Q2",
+      "questionText": "I like to plan tasks well in advance",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "conscientiousness"
+    },
+    {
+      "questionId": "Q3",
+      "questionText": "I remain calm when unexpected problems occur",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "emotionalStability"
+    },
+    {
+      "questionId": "Q4",
+      "questionText": "I enjoy learning unfamiliar topics",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "openness"
+    },
+    {
+      "questionId": "Q5",
+      "questionText": "I double-check my work for errors",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "conscientiousness"
+    },
+    {
+      "questionId": "Q6",
+      "questionText": "I enjoy meeting new people",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "extraversion"
+    },
+    {
+      "questionId": "Q7",
+      "questionText": "I usually complete tasks before deadlines",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "conscientiousness"
+    },
+    {
+      "questionId": "Q8",
+      "questionText": "I enjoy hearing opinions different from my own",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "openness"
+    },
+    {
+      "questionId": "Q9",
+      "questionText": "I like having a structured daily routine",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "conscientiousness",
+      "reverseScored": false
+    },
+    {
+      "questionId": "Q10",
+      "questionText": "Being around many people gives me energy",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "extraversion"
+    },
+    {
+      "questionId": "Q11",
+      "questionText": "I worry about things going wrong",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "emotionalStability",
+      "reverseScored": true
+    },
+    {
+      "questionId": "Q12",
+      "questionText": "I enjoy solving challenging problems",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "openness"
+    },
+    {
+      "questionId": "Q13",
+      "questionText": "I try to be considerate of others' feelings",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "agreeableness"
+    },
+    {
+      "questionId": "Q14",
+      "questionText": "I keep my tasks well organized",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "conscientiousness"
+    },
+    {
+      "questionId": "Q15",
+      "questionText": "I am comfortable making decisions quickly",
+      "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 },
+      "trait": "openness"
+    }
+  ],
+
+  "verbalReasoningQuestions": [
+    {
+      "questionId": "Q1",
+      "passage": "All cats are mammals. All mammals breathe air. Do cats breathe air?",
+      "options": { "A": "Yes", "B": "No", "C": "Cannot say", "D": "Sometimes" },
+      "correctAnswer": "A",
+      "explanation": "Logical deduction"
+    },
+    {
+      "questionId": "Q2",
+      "passage": "Choose the word most similar to \"Begin\"",
+      "options": { "A": "End", "B": "Start", "C": "Stop", "D": "Pause" },
+      "correctAnswer": "B",
+      "explanation": "Begin and start are synonyms"
+    },
+    {
+      "questionId": "Q3",
+      "passage": "Choose the word most opposite to \"Increase\"",
+      "options": { "A": "Raise", "B": "Grow", "C": "Reduce", "D": "Expand" },
+      "correctAnswer": "C",
+      "explanation": "Reduce is the antonym of increase"
+    },
+    {
+      "questionId": "Q4",
+      "passage": "Statement: All squares are rectangles. Conclusion: All rectangles are squares.",
+      "options": { "A": "TRUE", "B": "FALSE", "C": "Cannot say", "D": "Partly true" },
+      "correctAnswer": "B",
+      "explanation": "Not all rectangles are squares"
+    },
+    {
+      "questionId": "Q5",
+      "passage": "Choose the correct spelling",
+      "options": { "A": "Enviroment", "B": "Environment", "C": "Environmant", "D": "Enviornment" },
+      "correctAnswer": "B",
+      "explanation": "Environment is the correct spelling"
+    },
+    {
+      "questionId": "Q6",
+      "passage": "If all cars are vehicles and some vehicles are electric, are all cars electric?",
+      "options": { "A": "Yes", "B": "No", "C": "Cannot say", "D": "Always" },
+      "correctAnswer": "C",
+      "explanation": "We don't know if all cars are electric"
+    },
+    {
+      "questionId": "Q7",
+      "passage": "Choose the word most similar to \"Angry\"",
+      "options": { "A": "Calm", "B": "Upset", "C": "Happy", "D": "Relaxed" },
+      "correctAnswer": "B",
+      "explanation": "Angry and upset are similar in meaning"
+    },
+    {
+      "questionId": "Q8",
+      "passage": "Choose the word most opposite to \"Noisy\"",
+      "options": { "A": "Loud", "B": "Busy", "C": "Quiet", "D": "Fast" },
+      "correctAnswer": "C",
+      "explanation": "Quiet is the opposite of noisy"
+    },
+    {
+      "questionId": "Q9",
+      "passage": "Which word completes the analogy? Wheel : Car :: Wing : ?",
+      "options": { "A": "Bird", "B": "Plane", "C": "Road", "D": "Engine" },
+      "correctAnswer": "B",
+      "explanation": "A wheel is part of a car; a wing is part of a plane"
+    },
+    {
+      "questionId": "Q10",
+      "passage": "Select the correctly punctuated sentence.",
+      "options": {
+        "A": "Its raining.",
+        "B": "Its' raining.",
+        "C": "It's raining.",
+        "D": "Its raining'."
+      },
+      "correctAnswer": "C",
+      "explanation": "It's is the contraction of 'it is'"
+    },
+    {
+      "questionId": "Q11",
+      "passage": "Sarah is taller than Emma. Emma is taller than Jack. Is Sarah taller than Jack?",
+      "options": { "A": "Yes", "B": "No", "C": "Cannot say", "D": "Same height" },
+      "correctAnswer": "A",
+      "explanation": "Transitive logic"
+    },
+    {
+      "questionId": "Q12",
+      "passage": "Choose the word most similar to \"Smart\"",
+      "options": { "A": "Lazy", "B": "Clever", "C": "Slow", "D": "Weak" },
+      "correctAnswer": "B",
+      "explanation": "Smart and clever are synonyms"
+    },
+    {
+      "questionId": "Q13",
+      "passage": "Choose the word most opposite to \"Polite\"",
+      "options": { "A": "Kind", "B": "Rude", "C": "Helpful", "D": "Friendly" },
+      "correctAnswer": "B",
+      "explanation": "Rude is the antonym of polite"
+    },
+    {
+      "questionId": "Q14",
+      "passage": "Choose the correct spelling",
+      "options": { "A": "Occured", "B": "Occurred", "C": "Occurrd", "D": "Ocurred" },
+      "correctAnswer": "B",
+      "explanation": "Occurred has double 'r'"
+    },
+    {
+      "questionId": "Q15",
+      "passage": "Which word does not belong?",
+      "options": { "A": "Hammer", "B": "Screwdriver", "C": "Wrench", "D": "Laptop" },
+      "correctAnswer": "D",
+      "explanation": "Laptop is not a tool"
+    }
+  ],
+
+  "situationalReasoningQuestions": [
+    {
+      "questionId": "Q1",
+      "scenario": "You notice an error in a report just before submission.",
+      "options": {
+        "A": "Ignore it",
+        "B": "Fix it quickly and inform relevant people",
+        "C": "Blame someone else",
+        "D": "Submit it anyway"
+      },
+      "correctAnswer": "B",
+      "explanation": "Taking responsibility ensures accuracy"
+    },
+    {
+      "questionId": "Q2",
+      "scenario": "A colleague asks for help while you're busy.",
+      "options": {
+        "A": "Refuse immediately",
+        "B": "Ignore the request",
+        "C": "Offer help or suggest another time",
+        "D": "Report them"
+      },
+      "correctAnswer": "C",
+      "explanation": "Balancing priorities shows teamwork"
+    },
+    {
+      "questionId": "Q3",
+      "scenario": "You disagree with feedback you received.",
+      "options": {
+        "A": "Argue defensively",
+        "B": "Ignore it",
+        "C": "Reflect and discuss calmly",
+        "D": "Complain to others"
+      },
+      "correctAnswer": "C",
+      "explanation": "Professional discussion encourages growth"
+    },
+    {
+      "questionId": "Q4",
+      "scenario": "You are given unclear instructions.",
+      "options": {
+        "A": "Guess",
+        "B": "Do nothing",
+        "C": "Ask for clarification",
+        "D": "Blame management later"
+      },
+      "correctAnswer": "C",
+      "explanation": "Clarifying expectations prevents mistakes"
+    },
+    {
+      "questionId": "Q5",
+      "scenario": "A teammate makes a mistake that affects the group.",
+      "options": {
+        "A": "Publicly criticize them",
+        "B": "Ignore it",
+        "C": "Address it constructively",
+        "D": "Report immediately"
+      },
+      "correctAnswer": "C",
+      "explanation": "Constructive feedback maintains morale"
+    },
+    {
+      "questionId": "Q6",
+      "scenario": "You feel overwhelmed by your workload.",
+      "options": {
+        "A": "Do nothing",
+        "B": "Complain",
+        "C": "Prioritize and ask for support",
+        "D": "Miss deadlines"
+      },
+      "correctAnswer": "C",
+      "explanation": "Seeking support helps manage workload"
+    },
+    {
+      "questionId": "Q7",
+      "scenario": "A meeting is running off-topic.",
+      "options": {
+        "A": "Leave",
+        "B": "Interrupt rudely",
+        "C": "Politely refocus discussion",
+        "D": "Stay silent"
+      },
+      "correctAnswer": "C",
+      "explanation": "Keeps meetings productive"
+    },
+    {
+      "questionId": "Q8",
+      "scenario": "You receive critical feedback.",
+      "options": {
+        "A": "Dismiss it",
+        "B": "Take it personally",
+        "C": "Listen and improve",
+        "D": "Argue"
+      },
+      "correctAnswer": "C",
+      "explanation": "Feedback supports development"
+    },
+    {
+      "questionId": "Q9",
+      "scenario": "You notice unsafe behavior at work.",
+      "options": {
+        "A": "Ignore it",
+        "B": "Join in",
+        "C": "Report it properly",
+        "D": "Post online"
+      },
+      "correctAnswer": "C",
+      "explanation": "Safety should be addressed through correct channels"
+    },
+    {
+      "questionId": "Q10",
+      "scenario": "A project succeeds unexpectedly.",
+      "options": {
+        "A": "Take all credit",
+        "B": "Acknowledge team effort",
+        "C": "Downplay success",
+        "D": "Blame luck only"
+      },
+      "correctAnswer": "B",
+      "explanation": "Recognizing others builds trust"
+    },
+    {
+      "questionId": "Q11",
+      "scenario": "You work with someone difficult.",
+      "options": {
+        "A": "Avoid them",
+        "B": "Be confrontational",
+        "C": "Remain professional",
+        "D": "Complain constantly"
+      },
+      "correctAnswer": "C",
+      "explanation": "Professionalism improves collaboration"
+    },
+    {
+      "questionId": "Q12",
+      "scenario": "You are asked for feedback.",
+      "options": {
+        "A": "Lie",
+        "B": "Avoid",
+        "C": "Be honest and constructive",
+        "D": "Criticize harshly"
+      },
+      "correctAnswer": "C",
+      "explanation": "Constructive feedback is valuable"
+    },
+    {
+      "questionId": "Q13",
+      "scenario": "Your plan is not working.",
+      "options": {
+        "A": "Ignore it",
+        "B": "Continue anyway",
+        "C": "Adjust approach",
+        "D": "Quit"
+      },
+      "correctAnswer": "C",
+      "explanation": "Adaptability leads to success"
+    },
+    {
+      "questionId": "Q14",
+      "scenario": "A client requests work outside scope.",
+      "options": {
+        "A": "Do it anyway",
+        "B": "Ignore",
+        "C": "Explain boundaries politely",
+        "D": "Argue"
+      },
+      "correctAnswer": "C",
+      "explanation": "Clear boundaries maintain professionalism"
+    },
+    {
+      "questionId": "Q15",
+      "scenario": "A junior colleague helped significantly.",
+      "options": {
+        "A": "Ignore their contribution",
+        "B": "Take credit",
+        "C": "Give proper recognition",
+        "D": "Downplay role"
+      },
+      "correctAnswer": "C",
+      "explanation": "Recognizing others builds trust and leadership"
+    }
+  ]
+}

@@ -1,6 +1,11 @@
-let quizData = {};
+let quiz1Data = {};
 let quiz2Data = {};
-let currentQuizSet = 'quiz1'; // Track which quiz set is being used
+let quiz3Data = {};
+let quiz4Data = {};
+let quiz5Data = {};
+let quiz6Data = {};
+let currentQuizSet = 'quiz1';
+let currentDifficulty = 'basic';
 let currentSection = null;
 let currentQuestions = [];
 let currentQuestionIndex = 0;
@@ -13,18 +18,43 @@ let timerDuration = 300;
 async function loadQuizData() {
     try {
         const response1 = await fetch('quizData1.json');
-        quizData = await response1.json();
+        quiz1Data = await response1.json();
 
         const response2 = await fetch('quizData2.json');
         quiz2Data = await response2.json();
+
+        const response3 = await fetch('quizData3.json');
+        quiz3Data = await response3.json();
+
+        const response4 = await fetch('quizData4.json');
+        quiz4Data = await response4.json();
+
+        const response5 = await fetch('quizData5.json');
+        quiz5Data = await response5.json();
+
+        const response6 = await fetch('quizData6.json');
+        quiz6Data = await response6.json();
+
     } catch (error) {
         console.error('Error loading quiz data:', error);
     }
 }
 
-// Get current quiz data based on selected quiz set
+// Get current quiz data based on selected difficulty
 function getCurrentQuizData() {
-    return currentQuizSet === 'quiz1' ? quizData : quiz2Data;
+    if (currentDifficulty === 'basic') {
+        // Randomly select from quiz1, quiz2, or quiz3
+        const basicQuizzes = [quiz1Data, quiz2Data, quiz3Data];
+        const randomIndex = Math.floor(Math.random() * 3);
+        currentQuizSet = 'quiz' + (randomIndex + 1);
+        return basicQuizzes[randomIndex];
+    } else {
+        // Randomly select from quiz4, quiz5, or quiz6
+        const advancedQuizzes = [quiz4Data, quiz5Data, quiz6Data];
+        const randomIndex = Math.floor(Math.random() * 3);
+        currentQuizSet = 'quiz' + (randomIndex + 4);
+        return advancedQuizzes[randomIndex];
+    }
 }
 
 // Load settings from localStorage
@@ -38,6 +68,11 @@ function loadSettings() {
         timeRemaining = 300;
     }
     document.getElementById('timerMinutes').value = timerDuration / 60;
+
+    // Clean up old localStorage key if it exists
+    if (localStorage.getItem('selectedLevel')) {
+        localStorage.removeItem('selectedLevel');
+    }
 }
 
 // Initialize on page load
@@ -45,6 +80,26 @@ window.addEventListener('DOMContentLoaded', async () => {
     await loadQuizData();
     loadSettings();
     initializeEventListeners();
+
+    // Load the selected difficulty from localStorage
+    const savedDifficulty = localStorage.getItem('selectedDifficulty');
+    if (savedDifficulty) {
+        currentDifficulty = savedDifficulty;
+
+        // Update the active state of the buttons
+        document.querySelectorAll('.difficulty-btn').forEach(b => {
+            b.classList.remove('active');
+            if (b.classList.contains('btn')) {
+                b.classList.add('btn-secondary');
+            }
+        });
+
+        const selectedBtn = document.querySelector(`.difficulty-btn[data-difficulty="${savedDifficulty}"]`);
+        if (selectedBtn) {
+            selectedBtn.classList.add('active');
+            selectedBtn.classList.remove('btn-secondary');
+        }
+    }
 });
 
 function initializeEventListeners() {
@@ -118,11 +173,11 @@ function initializeEventListeners() {
         });
     });
 
-    // Quiz set selection
-    document.querySelectorAll('.quiz-set-btn').forEach(btn => {
+    // Difficulty selection
+    document.querySelectorAll('.difficulty-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             // Update active state
-            document.querySelectorAll('.quiz-set-btn').forEach(b => {
+            document.querySelectorAll('.difficulty-btn').forEach(b => {
                 b.classList.remove('active');
                 if (b.classList.contains('btn')) {
                     b.classList.add('btn-secondary');
@@ -131,8 +186,11 @@ function initializeEventListeners() {
             btn.classList.add('active');
             btn.classList.remove('btn-secondary');
 
-            // Update current quiz set
-            currentQuizSet = btn.dataset.quiz;
+            // Update current difficulty
+            currentDifficulty = btn.dataset.difficulty;
+
+            // Store the selected difficulty in localStorage
+            localStorage.setItem('selectedDifficulty', btn.dataset.difficulty);
         });
     });
 
@@ -425,7 +483,7 @@ function generateStandardResults() {
                 </div>
             </div>
             
-            <h4 style="margin: 1.5rem 0 1rem 0;">📝 Question Review</h4>
+            <h4 style="margin: 1.5rem 0 1rem 0;">🔍 Question Review</h4>
     `;
 
     currentQuestions.forEach((question, index) => {

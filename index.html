@@ -51,10 +51,11 @@
 
         <div id="sectionSelection">
             <div style="text-align: center; margin-bottom: 2rem;">
-                <h2>Choose Quiz Set</h2>
+                <h2>Choose Difficulty Level</h2>
                 <div style="display: flex; gap: 1rem; justify-content: center; margin: 1.5rem 0;">
-                    <button class="btn quiz-set-btn active" data-quiz="quiz1">Quiz Set 1</button>
-                    <button class="btn btn-secondary quiz-set-btn" data-quiz="quiz2">Quiz Set 2</button>
+                    <button class="btn difficulty-btn active" data-difficulty="basic">Easy-Intermediate</button>
+                    <button class="btn btn-secondary difficulty-btn"
+                        data-difficulty="advanced">Intermediate-Advanced</button>
                 </div>
             </div>
 
@@ -98,6 +99,11 @@
 
         <div id="resultsContainer" class="hidden"></div>
     </div>
+
+    <footer>
+        <p style="text-align: center;">&copy; 2026 Assessment Quiz. All rights reserved. | <a
+                href="https://pixelagent.co.uk">pixelagent.co.uk</a></p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
