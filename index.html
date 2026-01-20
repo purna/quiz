@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            --border-color: #dee2e6;
+            --accent-color: #007bff;
+            --accent-hover: #0056b3;
+            --success-color: #28a745;
+            --error-color: #dc3545;
+            --timer-warning: #ffc107;
+            --timer-danger: #dc3545;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e9ecef;
+            --text-secondary: #adb5bd;
+            --border-color: #495057;
+            --accent-color: #0d6efd;
+            --accent-hover: #0a58ca;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin: 1rem 0;
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .timer.warning {
+            color: var(--timer-warning);
+        }
+
+        .timer.danger {
+            color: var(--timer-danger);
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .section-select {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .section-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .question-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .question-number {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .option:hover {
+            border-color: var(--accent-color);
+            background: var(--bg-secondary);
+        }
+
+        .option.selected {
+            border-color: var(--accent-color);
+            background: rgba(0, 123, 255, 0.1);
+        }
+
+        .option-label {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .scale-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .scale-option {
+            flex: 1;
+            min-width: 60px;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:disabled {
+            background: var(--text-secondary);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-color);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .results {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .result-section {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .result-section:last-child {
+            border-bottom: none;
+        }
+
+        .result-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .score-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--success-color);
+            margin: 1rem 0;
+        }
+
+        .feedback-item {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .feedback-item.correct {
+            background: rgba(40, 167, 69, 0.1);
+            border-left: 4px solid var(--success-color);
+        }
+
+        .feedback-item.incorrect {
+            background: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid var(--error-color);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1rem;
+        }
+
+        .modal.hidden {
+            display: none;
+        }
+
+        .modal:not(.hidden) {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .btn-close:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .settings-section {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .settings-section h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+            }
+
+            .question-text {
+                font-size: 1.1rem;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            .scale-options {
+                flex-direction: column;
+            }
+
+            .scale-option {
+                width: 100%;
+            }
+
+            .timer {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <button class="theme-toggle" id="settingsBtn" style="right: 4rem;">⚙️</button>
+            <h1>Assessment Quiz</h1>
+            <div id="timerDisplay" class="hidden">
+                <div class="timer" id="timer">05:00</div>
+            </div>
+        </div>
+
+        <div id="settingsModal" class="modal hidden">
+            <div class="modal-content">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h2 style="margin: 0;">Settings</h2>
+                    <button class="btn-close" id="closeSettings">✕</button>
+                </div>
+
+                <div class="settings-section">
+                    <h3>⏱️ Timer Settings</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+                        Set the countdown timer duration for quizzes
+                    </p>
+
+                    <label for="timerMinutes" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">
+                        Duration (minutes)
+                    </label>
+                    <input type="number" id="timerMinutes" min="1" max="60" value="5"
+                        style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); font-size: 1rem;" />
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">
+                        Recommended: 5-10 minutes for 15 questions
+                    </p>
+                </div>
+
+                <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                    <button class="btn" id="saveSettings">Save Settings</button>
+                    <button class="btn btn-secondary" id="cancelSettings">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="sectionSelection">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Choose a Section to Begin</h2>
+            <div class="section-select">
+                <div class="section-card" data-section="personality">
+                    <h3>Personality Test</h3>
+                    <p>15 questions</p>
+                </div>
+                <div class="section-card" data-section="numerical">
+                    <h3>Numerical Reasoning</h3>
+                    <p>15 questions</p>
+                </div>
+                <div class="section-card" data-section="verbal">
+                    <h3>Verbal Reasoning</h3>
+                    <p>15 questions</p>
+                </div>
+                <div class="section-card" data-section="abstract">
+                    <h3>Abstract Reasoning</h3>
+                    <p>15 questions</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="quizContainer" class="hidden">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+
+            <div id="questionContainer"></div>
+
+            <div class="navigation">
+                <button class="btn btn-secondary" id="prevBtn">Previous</button>
+                <button class="btn" id="nextBtn">Next</button>
+            </div>
+        </div>
+
+        <div id="resultsContainer" class="hidden"></div>
+    </div>
+
+    <script>
+        const quizData = {
+            "mathQuestions": [{ "questionId": "Q1", "questionText": "What is 25% of 200?", "options": { "A": "25", "B": "50", "C": "75", "D": "100" }, "correctAnswer": "B" }, { "questionId": "Q2", "questionText": "If 3 pencils cost £1.20, how much do 5 pencils cost?", "options": { "A": "£1.50", "B": "£2.00", "C": "£2.50", "D": "£3.00" }, "correctAnswer": "B" }, { "questionId": "Q3", "questionText": "What is the next number in the sequence: 2, 4, 8, 16, ?", "options": { "A": "18", "B": "24", "C": "32", "D": "36" }, "correctAnswer": "C" }, { "questionId": "Q4", "questionText": "A value increases from 80 to 100. What is the percentage increase?", "options": { "A": "20%", "B": "25%", "C": "30%", "D": "40%" }, "correctAnswer": "B" }, { "questionId": "Q5", "questionText": "450 ÷ 9 = ?", "options": { "A": "45", "B": "50", "C": "55", "D": "60" }, "correctAnswer": "B" }, { "questionId": "Q6", "questionText": "Solve for x: 3x - 7 = 14", "options": { "A": "5", "B": "6", "C": "7", "D": "8" }, "correctAnswer": "C" }, { "questionId": "Q7", "questionText": "A train leaves at 14:15 and arrives at 16:45. How long was the journey?", "options": { "A": "2h 15m", "B": "2h 30m", "C": "2h 45m", "D": "3h 00m" }, "correctAnswer": "B" }, { "questionId": "Q8", "questionText": "What is the area of a rectangle with length 12cm and width 7cm?", "options": { "A": "19cm²", "B": "72cm²", "C": "84cm²", "D": "96cm²" }, "correctAnswer": "C" }, { "questionId": "Q9", "questionText": "In a class of 30 students, the ratio of boys to girls is 2:3. How many boys are there?", "options": { "A": "10", "B": "12", "C": "15", "D": "18" }, "correctAnswer": "B" }, { "questionId": "Q10", "questionText": "What is 3/4 of 80?", "options": { "A": "40", "B": "50", "C": "60", "D": "70" }, "correctAnswer": "C" }, { "questionId": "Q11", "questionText": "Find the mean of the numbers: 15, 25, 35, 45", "options": { "A": "25", "B": "30", "C": "35", "D": "40" }, "correctAnswer": "B" }, { "questionId": "Q12", "questionText": "What is the square root of 144?", "options": { "A": "10", "B": "11", "C": "12", "D": "14" }, "correctAnswer": "C" }, { "questionId": "Q13", "questionText": "0.5 * 0.2 = ?", "options": { "A": "0.01", "B": "0.1", "C": "1", "D": "0.52" }, "correctAnswer": "B" }, { "questionId": "Q14", "questionText": "If a car travels at 60 mph, how far does it travel in 45 minutes?", "options": { "A": "40 miles", "B": "45 miles", "C": "50 miles", "D": "55 miles" }, "correctAnswer": "B" }, { "questionId": "Q15", "questionText": "Next number in the sequence: 1, 4, 9, 16, 25, ?", "options": { "A": "30", "B": "34", "C": "36", "D": "49" }, "correctAnswer": "C" }],
+            "patternSequenceQuestions": [{ "questionId": "Q1", "pattern": "A B A B A B ?", "options": { "A": "A", "B": "B", "C": "C", "D": "D" }, "correctAnswer": "B" }, { "questionId": "Q2", "pattern": "▲ ● ▲ ● ▲ ● ?", "options": { "A": "▲", "B": "●", "C": "■", "D": "◆" }, "correctAnswer": "B" }, { "questionId": "Q3", "pattern": "1A, 2B, 3C, 4D, ?", "options": { "A": "4E", "B": "5D", "C": "5E", "D": "6F" }, "correctAnswer": "C" }, { "questionId": "Q4", "pattern": "Circle → Square → Triangle → Circle → ?", "options": { "A": "Square", "B": "Triangle", "C": "Circle", "D": "Hexagon" }, "correctAnswer": "A" }, { "questionId": "Q5", "pattern": "XXOOXXOOXX ?", "options": { "A": "OO", "B": "XX", "C": "XO", "D": "OX" }, "correctAnswer": "B" }, { "questionId": "Q6", "pattern": "10, 20, 30, 40, ?", "options": { "A": "45", "B": "50", "C": "60", "D": "100" }, "correctAnswer": "B" }, { "questionId": "Q7", "pattern": "🍎 🍌 🍎 🍌 🍎 ?", "options": { "A": "🍎", "B": "🍌", "C": "🍇", "D": "🍍" }, "correctAnswer": "B" }, { "questionId": "Q8", "pattern": "Z, Y, X, W, V, ?", "options": { "A": "T", "B": "S", "C": "U", "D": "R" }, "correctAnswer": "C" }, { "questionId": "Q9", "pattern": "1, 2, 4, 8, 16, ?", "options": { "A": "20", "B": "24", "C": "32", "D": "64" }, "correctAnswer": "C" }, { "questionId": "Q10", "pattern": "⬆️ ➡️ ⬇️ ⬅️ ⬆️ ?", "options": { "A": "⬆️", "B": "➡️", "C": "⬇️", "D": "⬅️" }, "correctAnswer": "B" }, { "questionId": "Q11", "pattern": "JFMAMJJA ?", "options": { "A": "S", "B": "O", "C": "N", "D": "D" }, "correctAnswer": "A" }, { "questionId": "Q12", "pattern": "1, 3, 6, 10, 15, ?", "options": { "A": "18", "B": "20", "C": "21", "D": "25" }, "correctAnswer": "C" }, { "questionId": "Q13", "pattern": "◒ ◓ ◒ ◓ ?", "options": { "A": "◒", "B": "◓", "C": "◔", "D": "◕" }, "correctAnswer": "A" }, { "questionId": "Q14", "pattern": "A1, C3, E5, G7, ?", "options": { "A": "H8", "B": "I9", "C": "J10", "D": "K11" }, "correctAnswer": "B" }, { "questionId": "Q15", "pattern": "3, 6, 9, 12, 15, ?", "options": { "A": "16", "B": "17", "C": "18", "D": "21" }, "correctAnswer": "C" }],
+            "personalityAssessment": [{ "questionId": "Q1", "questionText": "I enjoy working in a team environment", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q2", "questionText": "I prefer planning over spontaneity", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q3", "questionText": "I stay calm under pressure", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q4", "questionText": "I like trying new and unfamiliar tasks", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q5", "questionText": "I pay close attention to details", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q6", "questionText": "I find it easy to start conversations with strangers", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q7", "questionText": "I often finish my tasks well before the deadline", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q8", "questionText": "I am willing to change my opinion if I am proven wrong", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q9", "questionText": "I prefer to have a fixed daily routine", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q10", "questionText": "I feel energized after spending time with a large group", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q11", "questionText": "I tend to worry about things that might go wrong", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q12", "questionText": "I enjoy solving complex, abstract problems", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q13", "questionText": "I prioritize the needs of the team over my own interests", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q14", "questionText": "I keep my workspace highly organized", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }, { "questionId": "Q15", "questionText": "I am comfortable making decisions with limited information", "scale": { "stronglyDisagree": 1, "disagree": 2, "neutral": 3, "agree": 4, "stronglyAgree": 5 } }],
+            "verbalReasoningQuestions": [{ "questionId": "Q1", "passage": "All cats are mammals. All mammals are warm-blooded. Are cats warm-blooded?", "options": { "A": "Yes", "B": "No", "C": "Cannot say", "D": "Sometimes" }, "correctAnswer": "A" }, { "questionId": "Q2", "passage": "Choose the word most similar to \"Brief\"", "options": { "A": "Long", "B": "Short", "C": "Loud", "D": "Wide" }, "correctAnswer": "B" }, { "questionId": "Q3", "passage": "Choose the word most opposite to \"Increase\"", "options": { "A": "Expand", "B": "Add", "C": "Reduce", "D": "Grow" }, "correctAnswer": "C" }, { "questionId": "Q4", "passage": "Statement: Some birds cannot fly. Conclusion: All birds can fly.", "options": { "A": "TRUE", "B": "FALSE", "C": "Cannot say", "D": "Partly true" }, "correctAnswer": "B" }, { "questionId": "Q5", "passage": "Choose the correct spelling", "options": { "A": "Accomodate", "B": "Acommodate", "C": "Accommodate", "D": "Acomodate" }, "correctAnswer": "C" }, { "questionId": "Q6", "passage": "If all roses are flowers and some flowers fade quickly, do all roses fade quickly?", "options": { "A": "Yes", "B": "No", "C": "Cannot say", "D": "Always" }, "correctAnswer": "C" }, { "questionId": "Q7", "passage": "Choose the word most similar to \"Resilient\"", "options": { "A": "Tough", "B": "Weak", "C": "Happy", "D": "Fast" }, "correctAnswer": "A" }, { "questionId": "Q8", "passage": "Choose the word most opposite to \"Ancient\"", "options": { "A": "Old", "B": "Dusty", "C": "Modern", "D": "Antique" }, "correctAnswer": "C" }, { "questionId": "Q9", "passage": "Which word completes the analogy? Leaf : Tree :: Petal : ?", "options": { "A": "Stem", "B": "Flower", "C": "Root", "D": "Garden" }, "correctAnswer": "B" }, { "questionId": "Q10", "passage": "Select the correctly punctuated sentence.", "options": { "A": "Its raining.", "B": "It's raining.", "C": "Its' raining.", "D": "Its raining!" }, "correctAnswer": "B" }, { "questionId": "Q11", "passage": "Statement: John is taller than Sam. Sam is taller than Alex. Is John taller than Alex?", "options": { "A": "Yes", "B": "No", "C": "Cannot say", "D": "They are equal" }, "correctAnswer": "A" }, { "questionId": "Q12", "passage": "Choose the word most similar to \"Innocent\"", "options": { "A": "Guilty", "B": "Harmless", "C": "Clever", "D": "Angry" }, "correctAnswer": "B" }, { "questionId": "Q13", "passage": "Choose the word most opposite to \"Optimistic\"", "options": { "A": "Hopeful", "B": "Pessimistic", "C": "Cheerful", "D": "Bright" }, "correctAnswer": "B" }, { "questionId": "Q14", "passage": "Choose the correct spelling", "options": { "A": "Necessary", "B": "Neccessary", "C": "Necesary", "D": "Neccesary" }, "correctAnswer": "A" }, { "questionId": "Q15", "passage": "Which word does not belong in the group?", "options": { "A": "Apple", "B": "Banana", "C": "Carrot", "D": "Grape" }, "correctAnswer": "C" }]
+        };
+
+        let currentSection = null;
+        let currentQuestions = [];
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let timerInterval = null;
+        let timeRemaining = 300; // 5 minutes default
+        let timerDuration = 300; // Store the duration setting
+
+        // Load settings from localStorage
+        function loadSettings() {
+            const savedDuration = localStorage.getItem('timerDuration');
+            if (savedDuration) {
+                timerDuration = parseInt(savedDuration);
+                timeRemaining = timerDuration;
+            } else {
+                timerDuration = 300; // 5 minutes default
+                timeRemaining = 300;
+            }
+            document.getElementById('timerMinutes').value = timerDuration / 60;
+        }
+
+        // Initialize settings on page load
+        loadSettings();
+
+        // Settings modal controls
+        const settingsBtn = document.getElementById('settingsBtn');
+        const settingsModal = document.getElementById('settingsModal');
+        const closeSettings = document.getElementById('closeSettings');
+        const cancelSettings = document.getElementById('cancelSettings');
+        const saveSettings = document.getElementById('saveSettings');
+
+        settingsBtn.addEventListener('click', () => {
+            settingsModal.classList.remove('hidden');
+        });
+
+        closeSettings.addEventListener('click', () => {
+            settingsModal.classList.add('hidden');
+        });
+
+        cancelSettings.addEventListener('click', () => {
+            settingsModal.classList.add('hidden');
+            // Reset to saved value
+            document.getElementById('timerMinutes').value = timerDuration / 60;
+        });
+
+        saveSettings.addEventListener('click', () => {
+            const minutes = parseInt(document.getElementById('timerMinutes').value);
+            if (minutes >= 1 && minutes <= 60) {
+                timerDuration = minutes * 60;
+                timeRemaining = timerDuration;
+                localStorage.setItem('timerDuration', timerDuration);
+
+                // Update timer display
+                const timerEl = document.getElementById('timer');
+                const displayMinutes = Math.floor(timeRemaining / 60);
+                const displaySeconds = timeRemaining % 60;
+                timerEl.textContent = `${displayMinutes.toString().padStart(2, '0')}:${displaySeconds.toString().padStart(2, '0')}`;
+
+                // Close modal FIRST
+                settingsModal.classList.add('hidden');
+
+                // Show success message after a brief delay
+                setTimeout(() => {
+                    alert('Settings saved! Timer set to ' + minutes + ' minute(s).');
+                }, 100);
+            } else {
+                alert('Please enter a valid duration between 1 and 60 minutes.');
+            }
+        });
+
+        // Close modal when clicking outside
+        settingsModal.addEventListener('click', (e) => {
+            if (e.target === settingsModal) {
+                settingsModal.classList.add('hidden');
+            }
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const newTheme = theme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Shuffle array function
+        function shuffle(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        // Section selection
+        document.querySelectorAll('.section-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const section = card.dataset.section;
+                startQuiz(section);
+            });
+        });
+
+        function startQuiz(section) {
+            currentSection = section;
+
+            // Load and shuffle questions based on section
+            if (section === 'personality') {
+                currentQuestions = shuffle([...quizData.personalityAssessment]);
+            } else if (section === 'numerical') {
+                currentQuestions = shuffle([...quizData.mathQuestions]);
+            } else if (section === 'verbal') {
+                currentQuestions = shuffle([...quizData.verbalReasoningQuestions]);
+            } else if (section === 'abstract') {
+                currentQuestions = shuffle([...quizData.patternSequenceQuestions]);
+            }
+
+            userAnswers = new Array(currentQuestions.length).fill(null);
+            currentQuestionIndex = 0;
+
+            // Reset timer to current setting
+            timeRemaining = timerDuration;
+
+            // Show quiz container
+            document.getElementById('sectionSelection').classList.add('hidden');
+            document.getElementById('quizContainer').classList.remove('hidden');
+            document.getElementById('timerDisplay').classList.remove('hidden');
+
+            // Start timer
+            startTimer();
+
+            // Display first question
+            displayQuestion();
+        }
+
+        function startTimer() {
+            const timerEl = document.getElementById('timer');
+
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+                // Warning at 5 minutes
+                if (timeRemaining === 300) {
+                    timerEl.classList.add('warning');
+                }
+
+                // Danger at 1 minute
+                if (timeRemaining === 60) {
+                    timerEl.classList.remove('warning');
+                    timerEl.classList.add('danger');
+                }
+
+                // Time's up
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    finishQuiz();
+                }
+            }, 1000);
+        }
+
+        function displayQuestion() {
+            const question = currentQuestions[currentQuestionIndex];
+            const container = document.getElementById('questionContainer');
+            const isPersonality = currentSection === 'personality';
+
+            let html = `
+                <div class="question-card">
+                    <div class="question-number">Question ${currentQuestionIndex + 1} of ${currentQuestions.length}</div>
+                    <div class="question-text">${question.questionText || question.pattern || question.passage}</div>
+                    <div class="${isPersonality ? 'scale-options options' : 'options'}">
+            `;
+
+            if (isPersonality) {
+                const scales = ['Strongly Disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly Agree'];
+                scales.forEach((label, index) => {
+                    const value = index + 1;
+                    const selected = userAnswers[currentQuestionIndex] === value ? 'selected' : '';
+                    html += `
+                        <div class="option scale-option ${selected}" data-value="${value}">
+                            <div class="option-label">${value}</div>
+                            <div>${label}</div>
+                        </div>
+                    `;
+                });
+            } else {
+                Object.entries(question.options).forEach(([key, value]) => {
+                    const selected = userAnswers[currentQuestionIndex] === key ? 'selected' : '';
+                    html += `
+                        <div class="option ${selected}" data-answer="${key}">
+                            <div class="option-label">${key}</div>
+                            <div>${value}</div>
+                        </div>
+                    `;
+                });
+            }
+
+            html += `</div></div>`;
+            container.innerHTML = html;
+
+            // Add click handlers
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', () => {
+                    document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+
+                    if (isPersonality) {
+                        userAnswers[currentQuestionIndex] = parseInt(option.dataset.value);
+                    } else {
+                        userAnswers[currentQuestionIndex] = option.dataset.answer;
+                    }
+                });
+            });
+
+            // Update progress bar
+            const progress = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+
+            // Update navigation buttons
+            updateNavigation();
+        }
+
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            prevBtn.disabled = currentQuestionIndex === 0;
+
+            if (currentQuestionIndex === currentQuestions.length - 1) {
+                nextBtn.textContent = 'Finish';
+            } else {
+                nextBtn.textContent = 'Next';
+            }
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion();
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentQuestionIndex < currentQuestions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion();
+            } else {
+                finishQuiz();
+            }
+        });
+
+        function finishQuiz() {
+            clearInterval(timerInterval);
+
+            document.getElementById('quizContainer').classList.add('hidden');
+            document.getElementById('timerDisplay').classList.add('hidden');
+
+            const resultsContainer = document.getElementById('resultsContainer');
+            resultsContainer.classList.remove('hidden');
+
+            const timeTaken = timerDuration - timeRemaining;
+            const minutesTaken = Math.floor(timeTaken / 60);
+            const secondsTaken = timeTaken % 60;
+
+            let html = '<div class="results"><h2>Quiz Results</h2>';
+
+            if (currentSection === 'personality') {
+                html += generatePersonalityResults();
+            } else {
+                html += generateStandardResults();
+            }
+
+            html += `
+                <div style="margin-top: 2rem; text-align: center;">
+                    <p><strong>Time taken:</strong> ${minutesTaken}m ${secondsTaken}s</p>
+                    <button class="btn" onclick="location.reload()">Take Another Quiz</button>
+                </div>
+            </div>`;
+
+            resultsContainer.innerHTML = html;
+        }
+
+        function generateStandardResults() {
+            let correct = 0;
+            const totalQuestions = currentQuestions.length;
+            const timeTaken = timerDuration - timeRemaining;
+            const minutesTaken = (timeTaken / 60).toFixed(2);
+
+            currentQuestions.forEach((question, index) => {
+                const userAnswer = userAnswers[index];
+                const correctAnswer = question.correctAnswer;
+                const isCorrect = userAnswer === correctAnswer;
+
+                if (isCorrect) correct++;
+            });
+
+            const percentage = Math.round((correct / totalQuestions) * 100);
+            const powerScore = (correct / (timeTaken / 60)).toFixed(2);
+
+            // Determine performance level
+            let performanceLevel, performanceColor, performanceDescription;
+            if (correct >= 13) {
+                performanceLevel = 'High Score';
+                performanceColor = '#28a745';
+            } else if (correct >= 9) {
+                performanceLevel = 'Medium Score';
+                performanceColor = '#ffc107';
+            } else {
+                performanceLevel = 'Low Score';
+                performanceColor = '#dc3545';
+            }
+
+            // Get section-specific interpretation
+            const interpretations = {
+                numerical: {
+                    high: 'Strong quantitative skills; high comfort level with data and mental arithmetic.',
+                    medium: 'Good foundational math, but may need more time or scratch paper for complex problems.',
+                    low: 'May struggle with data-heavy tasks or quick decision-making involving numbers.'
+                },
+                verbal: {
+                    high: 'Excellent comprehension, logic, and attention to detail in communication.',
+                    medium: 'Solid understanding, but might fall for "logic traps" (like the "Cannot Say" questions).',
+                    low: 'May struggle with complex instructions or deductive reasoning.'
+                },
+                abstract: {
+                    high: 'Exceptional lateral thinking; can see the "big picture" and spot trends quickly.',
+                    medium: 'Good at following established rules but may take longer to identify new, complex patterns.',
+                    low: 'Prefers clear, explicit instructions over figuring out systems from scratch.'
+                }
+            };
+
+            const levelKey = correct >= 13 ? 'high' : correct >= 9 ? 'medium' : 'low';
+            performanceDescription = interpretations[currentSection][levelKey];
+
+            const passStatus = percentage >= 70 ? 'Pass ✓' : 'Review Needed';
+            const passColor = percentage >= 70 ? '#28a745' : '#dc3545';
+
+            let html = `
+                <div class="result-section">
+                    <h3>📊 ${currentSection === 'numerical' ? 'Numerical' : currentSection === 'verbal' ? 'Verbal' : 'Abstract'} Reasoning Results</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                        <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 8px; text-align: center; border: 2px solid ${performanceColor};">
+                            <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Raw Score</div>
+                            <div style="font-size: 2.5rem; font-weight: bold; color: ${performanceColor};">${correct}/${totalQuestions}</div>
+                        </div>
+                        
+                        <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 8px; text-align: center; border: 2px solid var(--accent-color);">
+                            <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Accuracy</div>
+                            <div style="font-size: 2.5rem; font-weight: bold; color: var(--accent-color);">${percentage}%</div>
+                        </div>
+                        
+                        <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 8px; text-align: center; border: 2px solid ${passColor};">
+                            <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Status</div>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: ${passColor};">${passStatus}</div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid ${performanceColor};">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <h4 style="margin: 0;">Performance Level</h4>
+                            <span style="background: ${performanceColor}; color: white; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.85rem; font-weight: bold;">
+                                ${performanceLevel}
+                            </span>
+                        </div>
+                        <p style="color: var(--text-secondary); margin: 0;">${performanceDescription}</p>
+                    </div>
+                    
+                    <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                        <h4 style="margin-bottom: 1rem;">⚡ Efficiency Metrics</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div style="font-size: 0.85rem; color: var(--text-secondary);">Time Taken</div>
+                                <div style="font-size: 1.3rem; font-weight: bold;">${Math.floor(timeTaken / 60)}m ${timeTaken % 60}s</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.85rem; color: var(--text-secondary);">Avg. Time per Question</div>
+                                <div style="font-size: 1.3rem; font-weight: bold;">${Math.round(timeTaken / totalQuestions)}s</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.85rem; color: var(--text-secondary);">Power Score</div>
+                                <div style="font-size: 1.3rem; font-weight: bold;">${powerScore}</div>
+                                <div style="font-size: 0.75rem; color: var(--text-secondary);">Correct/minute</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin: 1.5rem 0 1rem 0;">📝 Question Review</h4>
+            `;
+
+            currentQuestions.forEach((question, index) => {
+                const userAnswer = userAnswers[index];
+                const correctAnswer = question.correctAnswer;
+                const isCorrect = userAnswer === correctAnswer;
+
+                html += `
+                    <div class="feedback-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; gap: 1rem; margin-bottom: 0.5rem;">
+                                <strong>Q${index + 1}:</strong>
+                                <span style="font-size: 1.5rem;">${isCorrect ? '✓' : '✗'}</span>
+                            </div>
+                            <div style="margin-bottom: 0.5rem;">${question.questionText || question.pattern || question.passage}</div>
+                            <div style="font-size: 0.9rem;">
+                                <strong>Your answer:</strong> ${userAnswer || 'Not answered'} ${userAnswer && !isCorrect ? '→ ' + question.options[userAnswer] : ''}
+                                ${!isCorrect ? `<br><strong style="color: var(--success-color);">Correct answer:</strong> ${correctAnswer} → ${question.options[correctAnswer]}` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+
+            return html;
+        }
+
+        function generatePersonalityResults() {
+            const answered = userAnswers.filter(a => a !== null).length;
+
+            // Calculate trait scores based on question mapping
+            // Q1, Q6, Q10 = Extraversion
+            // Q2, Q5, Q7, Q14 = Conscientiousness
+            // Q3, Q11(reversed) = Emotional Stability
+            // Q4, Q8, Q12, Q15 = Openness
+            // Q13 = Agreeableness
+
+            const scores = {
+                extraversion: {
+                    total: (userAnswers[0] || 0) + (userAnswers[5] || 0) + (userAnswers[9] || 0),
+                    count: 3,
+                    questions: [1, 6, 10]
+                },
+                conscientiousness: {
+                    total: (userAnswers[1] || 0) + (userAnswers[4] || 0) + (userAnswers[6] || 0) + (userAnswers[13] || 0),
+                    count: 4,
+                    questions: [2, 5, 7, 14]
+                },
+                emotionalStability: {
+                    total: (userAnswers[2] || 0) + (userAnswers[10] ? (6 - userAnswers[10]) : 0),
+                    count: 2,
+                    questions: [3, 11]
+                },
+                openness: {
+                    total: (userAnswers[3] || 0) + (userAnswers[7] || 0) + (userAnswers[11] || 0) + (userAnswers[14] || 0),
+                    count: 4,
+                    questions: [4, 8, 12, 15]
+                },
+                agreeableness: {
+                    total: (userAnswers[12] || 0),
+                    count: 1,
+                    questions: [13]
+                }
+            };
+
+            // Calculate averages
+            Object.keys(scores).forEach(trait => {
+                scores[trait].average = scores[trait].total / scores[trait].count;
+            });
+
+            function getTraitLevel(average) {
+                if (average >= 4.5) return { label: 'Very High', color: '#28a745' };
+                if (average >= 3.5) return { label: 'High', color: '#20c997' };
+                if (average >= 2.5) return { label: 'Moderate', color: '#ffc107' };
+                if (average >= 1.5) return { label: 'Low', color: '#fd7e14' };
+                return { label: 'Very Low', color: '#dc3545' };
+            }
+
+            function getTraitDescription(trait, level) {
+                const descriptions = {
+                    extraversion: {
+                        'Very High': 'You are highly outgoing, sociable, and energized by social interactions.',
+                        'High': 'You enjoy social situations and feel comfortable in group settings.',
+                        'Moderate': 'You balance social interaction with alone time.',
+                        'Low': 'You prefer smaller groups and quieter environments.',
+                        'Very Low': 'You are more introverted and prefer solitude or one-on-one interactions.'
+                    },
+                    conscientiousness: {
+                        'Very High': 'You are extremely organized, detail-oriented, and disciplined.',
+                        'High': 'You are well-organized and take your responsibilities seriously.',
+                        'Moderate': 'You balance planning with flexibility.',
+                        'Low': 'You prefer spontaneity and may be less focused on details.',
+                        'Very Low': 'You are very spontaneous and less concerned with organization.'
+                    },
+                    emotionalStability: {
+                        'Very High': 'You remain exceptionally calm and composed under pressure.',
+                        'High': 'You handle stress well and maintain emotional balance.',
+                        'Moderate': 'You experience normal levels of stress and anxiety.',
+                        'Low': 'You may experience higher levels of worry or stress.',
+                        'Very Low': 'You tend to experience significant anxiety or emotional reactions.'
+                    },
+                    openness: {
+                        'Very High': 'You are highly creative, curious, and love new experiences.',
+                        'High': 'You enjoy trying new things and thinking abstractly.',
+                        'Moderate': 'You balance familiarity with new experiences.',
+                        'Low': 'You prefer familiar routines and practical approaches.',
+                        'Very Low': 'You strongly prefer routine and conventional methods.'
+                    },
+                    agreeableness: {
+                        'Very High': 'You are extremely cooperative and prioritize group harmony.',
+                        'High': 'You are cooperative and considerate of others.',
+                        'Moderate': 'You balance personal and group interests.',
+                        'Low': 'You may prioritize your own interests more often.',
+                        'Very Low': 'You tend to be more competitive and self-focused.'
+                    }
+                };
+                return descriptions[trait][level];
+            }
+
+            let html = `
+                <div class="result-section">
+                    <h3>🧠 Your Personality Profile</h3>
+                    <p style="margin-bottom: 2rem;">You answered ${answered} out of ${currentQuestions.length} questions. Here's your Big Five personality trait analysis:</p>
+            `;
+
+            const traitNames = {
+                extraversion: '👥 Extraversion',
+                conscientiousness: '📋 Conscientiousness',
+                emotionalStability: '😌 Emotional Stability',
+                openness: '🎨 Openness to Experience',
+                agreeableness: '🤝 Agreeableness'
+            };
+
+            Object.entries(scores).forEach(([trait, data]) => {
+                const level = getTraitLevel(data.average);
+                const description = getTraitDescription(trait, level.label);
+                const percentage = (data.average / 5) * 100;
+
+                html += `
+                    <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-primary); border-radius: 8px; border-left: 4px solid ${level.color};">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <h4 style="margin: 0;">${traitNames[trait]}</h4>
+                            <span style="background: ${level.color}; color: white; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.85rem; font-weight: bold;">
+                                ${level.label}
+                            </span>
+                        </div>
+                        <div style="background: var(--bg-secondary); height: 12px; border-radius: 6px; overflow: hidden; margin: 0.75rem 0;">
+                            <div style="background: ${level.color}; height: 100%; width: ${percentage}%; transition: width 0.5s;"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.75rem;">
+                            <span><strong>Score:</strong> ${data.average.toFixed(2)} / 5.00</span>
+                            <span><strong>Total:</strong> ${data.total} / ${data.count * 5}</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">${description}</p>
+                        <details style="margin-top: 0.75rem;">
+                            <summary style="cursor: pointer; color: var(--accent-color); font-size: 0.9rem;">Based on questions: ${data.questions.join(', ')}</summary>
+                        </details>
+                    </div>
+                `;
+            });
+
+            html += `
+                </div>
+                <div class="result-section">
+                    <h3>📊 Detailed Responses</h3>
+                    <div style="margin-top: 1rem;">
+            `;
+
+            const labels = ['Strongly Disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly Agree'];
+
+            currentQuestions.forEach((question, index) => {
+                const answer = userAnswers[index];
+                const isReversed = index === 10; // Q11 is reversed
+
+                html += `
+                    <div class="feedback-item" style="background: var(--bg-primary); border-left: 4px solid var(--accent-color);">
+                        <div>
+                            <strong>Q${index + 1}:</strong> ${question.questionText}
+                            ${isReversed ? '<span style="color: var(--accent-color); font-size: 0.85rem;"> (Reverse scored)</span>' : ''}<br>
+                            <small>Response: ${answer ? labels[answer - 1] + ' (' + answer + ')' : 'Not answered'}</small>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += '</div></div>';
+            return html;
+        }
+    </script>
+</body>
+
+</html>
