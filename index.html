@@ -115,9 +115,10 @@
     <script src="script.js"></script>
     <script>
       // Register service worker to enable offline support
+      // Use a relative path so the service worker scope works for GitHub Pages project site
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js').then(function(reg) {
+          navigator.serviceWorker.register('sw.js').then(function(reg) {
             console.log('ServiceWorker registration successful with scope: ', reg.scope);
           }).catch(function(err) {
             console.warn('ServiceWorker registration failed: ', err);
