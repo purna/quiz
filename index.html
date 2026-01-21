@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts & Icons -->
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="mask-icon" href="favicon.svg" color="#1e293b" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#1e293b">
     <title>Assessment Quiz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -106,6 +113,18 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      // Register service worker to enable offline support
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').then(function(reg) {
+            console.log('ServiceWorker registration successful with scope: ', reg.scope);
+          }).catch(function(err) {
+            console.warn('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
 </body>
 
 </html>

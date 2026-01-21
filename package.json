@@ -1,0 +1,25 @@
+{
+  "name": "pixel-quiz",
+  "version": "1.1.0",
+  "description": "Pixel Quiz - Offline-capable assessment app",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s . -l 5000",
+    "build": "parcel build index.html",
+    "dev": "parcel watch index.html",
+    "lint": "eslint . --ext .js,.html",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "quiz",
+    "offline",
+    "pwa"
+  ],
+  "author": "Pixelagent",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^2.10.0",
+    "serve": "^14.0.1",
+    "eslint": "^8.0.0"
+  }
+}
